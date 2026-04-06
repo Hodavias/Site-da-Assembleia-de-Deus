@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cinzel', serif;
+    opacity: 0;
+    /* escondido inicialmente */
+    transform: translateY(20px);
+    /* deslocado para baixo */
+    animation: fadeInUp 0.6s ease-out forwards;
+    /* animação para pegar a posição final */
+    animation-delay: var(--delay, 0s);
+    /* atraso para criar sequência */
+    will-change: transform, opacity;
+}
+
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .entry {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+:root {
+    --primary-color: #ffffff;
+    --secundary-color: #000000;
+    --terciary-color: #0000FF;
+    --background-color: #08122A;
+    --text-color: #d4cdcd;
+
+}
+
+body{
+    background-color:   var(--primary-color) ;
+}
+
+
+
+.text{
+    color:var(--primary-color);
+    text-align:center ;
+    font-weight: 700;
+background: url(imagens/7.png);
+  background-position: center center;
+    background-repeat: no-repeat;
+      background-size: cover;
+height: 400px;
+width: 100%;
+border-radius: 10px;
+font-size: 50px;
+padding-top: 10%;
+background-color: var(--terciary-color);
+ letter-spacing: 10px; 
+ font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+
+.sobre{
+    
+    border-radius: 20px;
+    padding: 15px;
+  
+    
+}
+
+
+.text-sobre-titulo{
+ 
+    font-weight: 700;
+  color:var(--terciary-color);
+  font-size: 45px;
+  display: block;
+  margin-top: 7%;
+  margin-left: 30px;
+}
+
+.sobre-adolescentes{
+    background-color: var(--terciary-color);
+    opacity: 0.9;
+    border-radius: 30px;
+    padding: 20px 20px;
+    margin-top: 25px;
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.sobre-adolescentes:hover {
+    box-shadow: 0 10px 20px rgb(0, 0, 0);
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+color: var(--terciary-color) ;
+background-color: var(--primary-color);
+font-weight: 700;
+}
+
+.sobre-adolescentes:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+
+.container{
+  display: flex;
+  align-items: center; /* alinha verticalmente */
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.pontos{
+    margin-bottom: 15px;
+    margin-left: 9%;
+    font-size: 19px;
+    padding: 50px;
+    margin-top: 7%;
+    font-weight: 600;
+}
+
+.pontos:hover{
+ box-shadow: 0 10px 20px rgb(0, 0, 0);
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+color: var(--terciary-color) ;
+background-color: var(--primary-color);
+width: 500px;
+left: 10px;
+border-radius: 20px;
+font-weight: 600;
+}
+li{
+    margin-bottom: 2rem;
+}
+
+.pontos:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+    width: 500px;
+border-radius: 20px;
+}
+
+
+/* Fundo das imagens */
+.slider-wrapper {
+  padding: 2rem;
+  position: relative;
+  max-width: 38rem;
+  margin: 0 auto;
+}
+
+.slider {
+  display: flex;
+  aspect-ratio: 20 / 21;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0%, 0%, 0%, 0.25);
+  border-radius: 0.5rem;
+  width: 100%;
+   height: auto; 
+}
+
+.slider img {
+  flex: 1 0 100%;
+  scroll-snap-align: start; /* corrigido de scroll-snap-type para scroll-snap-align */
+  object-fit: cover;
+}
+
+.slider-nav {
+  display: flex;
+  justify-content: center; /* centraliza os botões */
+  gap: 15px; /* espaçamento entre os botões */
+  position: absolute;
+  bottom: 1.25rem;
+  left: 36%;
+
+  transform: translateX(-50%);
+  z-index: 1;
+  margin-top: 10px;
+  height: 0%;
+  /* removi margin-top, pois com position absolute não faz diferença */
+}
+
+.slider-nav a {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.75;
+  transition: opacity ease 250ms;
+  display: block; /* garante que o link funcione como uma caixa */
+}
+
+.slider-nav a:hover {
+  opacity: 1;
+  background-color: rgb(107, 29, 35);
+}
+
+/* Parte do video */
+.video-secsion{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.video-box{
+    border-radius: 50px;
+      width: 80%;
+    height: 60%;
+}
+
+/* Publico Alvo */
+
+.public{
+    margin-bottom: 30px;
+    padding: 20px;
+}
+.public-text{
+    background-color:#88878f88 ;
+    opacity: 0.9;
+    border-radius: 30px;
+    padding: 20px 20px;
+    margin-top: 25px;
+}
+
+.titulo-text{
+    font-weight: 600;
+    font-size: 25px;
+    color: var(--terciary-color);
+    margin-bottom: 20px;
+}
+
+.text-alvo{
+    margin-bottom: 20px;
+    font-size: 17px;
+      line-height: 1.8;       /* Espaçamento generoso entre linhas */
+  letter-spacing: 1px;    /* Leve espaçamento entre letras */
+  word-spacing: 3px;      /* Espaçamento maior entre palavras */
+  color: black;
+  font-weight: 600;
+}
+
+
+.image-social {
+    width: 84px;
+    height: 84px;
+    margin: 20px 20px;
+    cursor: pointer;
+    border-radius: 47px;
+
+}
+
+.image-social:hover {
+    box-shadow: 0 10px 20px #BF9752;
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+
+}
+
+.image-social:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+.eventos-caixa{
+  text-align: center;
+background: #020024;
+background: linear-gradient(359deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+   opacity: 0.9;
+    border-radius: 30px;
+    padding: 20px 20px;
+    margin-top: 25px;
+}
+
+.acompanhe{
+    font-weight: 600;
+    font-size: 25px;
+    color: #FFFFFF;
+}
+
+
+
+
+.coordinators-container{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}

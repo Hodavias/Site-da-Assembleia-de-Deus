@@ -1,0 +1,941 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cinzel', serif;
+    opacity: 0;
+    /* escondido inicialmente */
+    transform: translateY(20px);
+    /* deslocado para baixo */
+    animation: fadeInUp 0.6s ease-out forwards;
+    /* animação para pegar a posição final */
+    animation-delay: var(--delay, 0s);
+    /* atraso para criar sequência */
+    will-change: transform, opacity;
+}
+
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .entry {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+:root {
+    --primary-color: #ffffff;
+    --secundary-color: #000000;
+    --terciary-color: #0000FF;
+    --background-color: #08122A;
+    --text-color: #696969;
+
+}
+
+body {
+    min-height: 100vh;
+    background: #058ab3;
+    background: linear-gradient(180deg, #023b54 0%, #9adac1 100%);
+}
+
+
+.navegacao {
+    display: flex;
+    justify-content: space-around;
+    position: sticky;
+    top: -25px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+}
+
+/* Parte do menu de ativação */
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    transition: all 1.0s cubic-bezier(.25, .1, .25, 1);
+    list-style: none;
+    margin: 30px;
+
+}
+
+.menu:hover {
+    box-shadow: 0 10px 20px rgb(2, 3, 37);
+    background: linear-gradient(180deg, #023b54 0%, #9adac1 100%);
+    transform: translateY(-20px) scale(2.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.menu:not(:hover) {
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+.link-menu {
+    color: var(--secundary-color);
+    display: flex;
+    padding: 15px 40px;
+    position: relative;
+
+    /* Começa transparente */
+    background: transparent;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+
+    /* Borda invisível no início */
+    border: 1px solid transparent;
+    border-radius: 12px;
+
+    /* Texto */
+    color: rgb(5, 4, 4);
+    text-decoration: none;
+    font-weight: 500;
+
+    /* TRANSIÇÃO SUAVE (ida E volta) ✨ */
+    transition:
+        background 0.4s ease,
+        backdrop-filter 0.4s ease,
+        -webkit-backdrop-filter 0.4s ease,
+        border-color 0.4s ease,
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+}
+
+.link-menu:hover {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* Efeito de desfoque */
+    /* Borda de vidro */
+    border-color: rgba(255, 255, 255, 0.3);
+    /* Aumenta levemente */
+    transform: scale(1.08);
+    /* Sombra suave */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* POSICIONAMENTO */
+.dropdown {
+  position: relative;
+}
+
+.has-submenu {
+  position: relative;
+  margin-top: 20px;
+}
+
+/* SUBMENUS */
+.submenu,
+.submenu-right {
+  position: absolute;
+  background: #eee;
+     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  min-width: 300px;
+padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: 0.3s ease;
+}
+
+/* PRIMEIRO MENU */
+.submenu {
+  top: 100%;
+  left: 0;
+  border-radius: 10px;
+   list-style-type: none;
+
+
+}
+
+/* MENU LATERAL */
+.submenu-right {
+  top: 0;
+  left: 100%;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  margin-left: 10%;
+   list-style-type: none;
+   font-size: 20px;
+    text-align:start;
+   
+}
+
+.submenu-right li{
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+
+
+.has-submenu a {
+    text-decoration: none;
+    color: var(--secundary-color);
+ margin-bottom: 20px;
+ font-weight: 500;
+  padding: 10px;
+   
+}
+
+/* HOVER (DESKTOP) */
+.dropdown:hover .submenu,
+.has-submenu:hover .submenu-right {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* JS ACTIVE */
+.submenu.active,
+.submenu-right.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* EFEITO HOVER */
+.submenu li:hover,
+.submenu-right li:hover {
+  background: #9ADAC0;
+    backdrop-filter: blur(12px);
+    border-color: rgba(255, 255, 255, 0.3);
+    /* Aumenta levemente */
+    transform: scale(1.08);
+    /* Sombra suave */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.logo-image {
+    margin-top: -9%;
+    width: 99%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    margin-bottom: -10%;
+    background: #9ADAC0;
+     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+     object-fit: cover;
+
+}
+
+.logo-image:hover {
+    box-shadow: 0 10px 20px rgb(2, 3, 37);
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+}
+
+.logo-image:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+.image-logo {
+    display: flex;
+    align-items: center;
+}
+
+
+.button-logo-container{
+    display: flex;
+    justify-content: space-around;
+      top: 25px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+     margin-bottom: 10%;
+
+}
+.button-logo-container a{
+text-decoration: none;
+color: #ffffff;
+font-size: 25px;
+
+padding: 20px;
+border-radius: 5px;
+}
+.button-logo:hover{
+    box-shadow: 0 10px 20px rgb(2, 3, 37);
+    transform: translateY(-10px) scale(1.10);
+    /* aumenta o tamanho do card */
+    transition: all 0.7s ease;
+    border: #9ADAC0 solid 1px;
+
+}
+.button-logo:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+
+.sobre-a-igreja {
+    background: rgba(181, 183, 206, 0.6);
+
+    color: var(--secundary-color);
+    margin-top: 5%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3%;
+    border-radius: 20px;
+    margin-bottom: 5%;
+    border: 1px solid var(--background-color);
+
+}
+
+.sobre-a-igreja:hover {
+    box-shadow: 0 10px 20px rgb(2, 3, 37);
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+
+.sobre-a-igreja:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+.texto-sobre {
+    text-align: center;
+}
+
+.pergunta-sobre {
+    font-size: 20px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-weight: 600;
+}
+
+
+.my-button {
+    text-decoration: none;
+    color: var(--secundary-color);
+    display: inline-block;
+
+    display: inline-block;
+    padding: 15px 40px;
+
+    /* Começa transparente */
+    background: transparent;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+
+    /* Borda invisível no início */
+    border: 1px solid transparent;
+    border-radius: 12px;
+
+    /* Texto */
+    color: var(--background-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-weight: 600;
+    font-size: 32px;
+    margin-top: 20px;
+
+    transition:
+        background 0.4s ease,
+        backdrop-filter 0.4s ease,
+        -webkit-backdrop-filter 0.4s ease,
+        border-color 0.4s ease,
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+}
+
+.my-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* Efeito de desfoque */
+    /* Borda de vidro */
+    border-color: rgba(255, 255, 255, 0.3);
+
+    /* Aumenta levemente */
+    transform: scale(1.08);
+
+    /* Sombra suave */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+
+
+
+/* Botão de vídeo explicativo */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    border-radius: 20px;
+}
+
+/* Quando o modal estiver ativo */
+.modal.ativo {
+    display: flex;
+}
+
+/* Container do vídeo */
+.modal-conteudo {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+}
+
+/* O vídeo em si */
+.modal-conteudo video {
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* Botão de fechar */
+.btn-fechar {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.btn-fechar:hover {
+    color: var(--background-color);
+}
+
+
+
+/* Caixa de Missões */
+
+
+
+.projetos {
+    padding: 6rem 2rem;
+
+}
+
+
+.projeto-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    background: -webkit-linear-gradient(#0e0047, #8283ac);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.projeto-card {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--secondary-color);
+    margin: 2rem;
+    overflow: hidden;
+}
+
+.projeto-card-1 {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--secondary-color);
+    margin: 2rem;
+    overflow: hidden;
+    width: 314px;
+    height: 478px;
+}
+
+.projeto-card-1:hover {
+    box-shadow: 0 20px 30px rgb(86, 21, 21);
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.projeto-card-1:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+.projeto-card-2 {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--secondary-color);
+    margin: 2rem;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.projeto-card-2:hover {
+    box-shadow: 0 20px 30px rgb(29, 56, 7);
+    transform: translateY(-15px) scale(1.09);
+    /* aumenta o tamanho do card */
+    transition: all 0.7s ease;
+    cursor: pointer;
+}
+
+.projeto-card-2:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+.projeto-card-4 {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--secondary-color);
+    margin: 2rem;
+    overflow: hidden;
+}
+
+.projeto-card-4:hover {
+    box-shadow: 0 20px 30px rgb(121, 6, 54);
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.projeto-card-4:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+.projeto-card-5 {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--secondary-color);
+    margin: 2rem;
+    overflow: hidden;
+}
+
+.projeto-card-5:hover {
+    box-shadow: 0 20px 30px rgb(205, 70, 2);
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.projeto-card-5:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+.projeto-card:hover {
+    box-shadow: 0 20px 30px rgb(2, 3, 37);
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.projeto-card:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+.projeto-card-6 {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--secondary-color);
+    margin: 2rem;
+    overflow: hidden;
+}
+
+.projeto-card-6:hover {
+    box-shadow: 0 20px 30px rgb(2, 97, 205);
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.projeto-card-6:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+
+
+.projetos-caixa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+.projetos-imagens {
+    height: 100%;
+    /* altura da imagem */
+    width: 100%;
+    /* largura da imagem */
+    object-fit: cover;
+}
+
+
+.info-projetos {
+    margin-bottom: 5px;
+}
+
+.paragrafo-projetos {
+    color: #E9ECEF;
+    line-height: 1.25rem;
+}
+
+.caixa-texto-projeto {
+    padding: 1.5rem;
+}
+
+
+/* Parte de Eventos */
+
+.eventos {
+    background-color: #E9ECEF;
+    margin-top: 5%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3%;
+    border-radius: 20px;
+    margin-bottom: 5%;
+}
+
+.eventos-caixa {
+
+    text-align: center;
+}
+
+.projeto-titulo-eventos {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.acompanhe {
+    font-weight: 600;
+    font-size: 25px;
+
+}
+
+.acompanhe-texto {
+    font-weight: 500;
+    font-size: 15px;
+    text-decoration: none;
+
+}
+
+.caixa-links {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    list-style: none;
+
+}
+
+
+.image-social {
+    width: 54px;
+    height: 54px;
+    margin: 20px 20px;
+    cursor: pointer;
+    border-radius: 17px;
+    opacity: 1;
+    transition: opacity 0.3s;
+    text-decoration: none;
+}
+
+.image-social:hover {
+    box-shadow: 0 10px 20px rgb(19, 40, 97);
+    transform: translateY(-10px) scale(2.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+
+    opacity: 0.7;
+}
+
+.image-social:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+
+
+/* Parte da sesão de eventos  */
+
+
+
+
+.slider-container {
+    position: relative;
+    width: 90vw;
+    margin-top: 2%;
+    border-radius: 10px;
+    padding: 20px;
+    margin-left: 5vw;
+
+}
+
+.list {
+    position: relative;
+    height: 720px;
+    overflow: hidden;
+
+}
+
+/* Todos os itens começam escondidos */
+.list .item {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+/* Item ativo fica visível */
+.list .item.active {
+    display: flex;
+
+
+
+}
+
+
+.image-event a {
+    display: inline-block;
+    border-radius: 10px;
+    overflow: hidden;
+
+
+}
+
+.image-event:hover {
+
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+    cursor: pointer;
+
+}
+
+.img-event {
+    width: 780px;
+    height: 580px;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    opacity: 1;
+
+}
+
+.event-text {
+    color: var(--primary-color);
+    background: #0008ff;
+    background: radial-gradient(circle, rgb(0, 58, 134) 0%, rgba(0, 7, 64, 1) 100%);
+    width: 80%;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.event-text:hover {
+
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(183, 186, 194, 0.8);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+    cursor: pointer;
+    color: #FFA500;
+}
+
+.event-text:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+.event-text h2 {
+
+    margin: 0;
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.event-text p {
+    margin-bottom: 2%;
+    font-size: 90%;
+}
+
+/* Botões de navegação */
+.arrow {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 10px;
+    pointer-events: none;
+    /* evita que a área vazia do container capture clique */
+}
+
+.arrow button {
+    pointer-events: auto;
+    /* permite clicar nos botões */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 10px;
+    background: none;
+}
+
+.arrow button:hover {
+    background-color: #e4e0e0;
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+}
+
+.arrow button:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+.arrow button img {
+    width: 25px;
+    height: 25px;
+}
+
+/* Inverte a seta do botão voltar */
+.arrow button#prev img {
+    transform: scaleX(-1);
+
+}
+
+
+
+.button-menu.ativo {
+    right: 208px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--background-color);
+
+}
+
+.conteudo {
+    transition: 0.5s ease;
+}
+
+.conteudo.ativo {
+    margin-right: 100px;
+}
+
+
+
+
+
+
+@media screen and (max-width: 700px) {
+
+    body {
+        display: block;
+        margin: 30% auto;
+
+    }
+
+    .menu-navegacao {
+        display: none;
+
+    }
+
+
+    .logo-image {
+        width: 322px;
+        height: 252px;
+        background: none;
+        padding: 0;
+    }
+
+
+
+}

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="Imagens/Inicio e logo/ChatGPT Image 29 de jan. de 2026, 18_28_27.png">
+    <script src="https://kit.fontawesome.com/9a55ea5818.js" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="stayle.css">
+
+    <title>Assembleia de Deus - M. Marituba</title>
+</head>
+
+<body>
+
+
+
+    <nav class="navegacao">
+
+        <ul class="menu">
+            <li>
+                <a href="#home" class="link-menu"> HOME </a>
+            </li>
+
+            <li>
+                <a href="#sobre" class="link-menu"> SOBRE </a>
+            </li>
+
+            <li class="dropdown">
+                <a href="#" class="link-menu">MISSÕES ▾</a>
+
+                <ul class="submenu">
+                    <li class="has-submenu">
+                        <a href="#">GERACIONAIS ▸</a>
+
+                        <ul class="submenu-right">
+                            <li><a href="Missões/Missões com adolecentes/adolecentes.html">Adolescentes</a></li>
+                            <li><a href="Missões/Missão com jovens/jovens.html">Jovens</a></li>
+                            <li><a href="Missões/Missões com homens/homens.html">Homens</a></li>
+                            <li><a href="Missões/Missões com mulheres/mulheres.html">Mulheres</a></li>
+                            <li><a href="Missões/Missões com Crianças/crianças.html">Crianças</a></li>
+                            <li><a href="#">Calebe (3ª idade)</a></li>
+                            <li><a href="#">Diaconal</a></li>
+                            <li><a href="#">Eventos</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="has-submenu">
+                        <a href="#">ESPECÍFICAS ▸</a>
+
+                        <ul class="submenu-right">
+                            <li><a href="#">Missão Contra Fome</a></li>
+                            <li><a href="#">Boas Novas</a></li>
+                            <li><a href="#">Infraestrutura</a></li>
+                            <li><a href="#">Missão SOS</a></li>
+                            <li><a href="#">Missão Nacional e Internacional</a></li>
+                            <li><a href="#">Missão Resgate</a></li>
+                            <li><a href="#">EBD</a></li>
+                            <li><a href="#">IBADMA</a></li>
+                            <li><a href="#">Células Missionárias</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li>
+                <a href="#eventos" class="link-menu"> EVENTOS </a>
+            </li>
+            <li>
+                <a href="#conteudos" class="link-menu"> CONTEUDOS </a>
+            </li>
+
+
+            <li>
+                <a href="#templos" class="link-menu">TEMPLOS </a>
+            </li>
+
+        </ul>
+
+    </nav>
+    <div class="conteudo">
+        <div class="image-logo">
+            <img id="home" src="Imagens/Inicio e logo/imagem97.jpeg" class="logo-image">
+        </div>
+
+        <div class="button-logo-container">
+            <a href="" class="button-logo"> Horários de culto </a>
+            <a href="" class="button-logo"> Ver um templo mais proximo </a>
+            <a href="https://www.youtube.com/@admaritubaeareametropolita6582" class="button-logo"> Cultos ao vivo </a>
+
+        </div>
+
+
+        <div class="sobre-a-igreja" id="sobre">
+            <div class="texto-sobre">
+                <h1 class="titulo-sobre"> Assembleia de Deus em Marituba </h1>
+                <p class="pergunta-sobre"> Quem somos ? </p>
+
+                <p class="texto-sobre"> A Assembleia de Deus em Marituba é uma igreja cristã que se dedica ao serviço de
+                    Deus e à comunidade
+                    local. </p>
+
+
+
+
+                <div class="video-explicativo">
+
+                    <p class="texto-video"> Assista ao vídeo e saiba mais sobre a nossa igreja </p>
+                    <button onclick="abrirVideo()" id="btnPlay" class="my-button">▶ Nossa Historia</button>
+
+                    <!-- Modal do vídeo (começa escondido) -->
+                    <div id="modalVideo" class="modal">
+                        <div class="modal-conteudo">
+                            <button onclick="fecharVideo()" class="btn-fechar">✕</button>
+                            <video id="meuVideo" controls>
+                                <source
+                                    src="Videos/historia da igreja/administeriomarituba_a81c88f044e8451daa9e61637985bd52.mp4"
+                                    type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+        <!-- seção de missões -->
+
+        <section id="missoes" class="projetos"> <!-- pagina aonde ficara os projetos -->
+            <h2 class="projeto-titulo">Nossas Missões </h2>
+            <div class="projetos-caixa">
+
+                <div class="projeto-card-1">
+                    <a href="Missões/Missões com adolecentes/adolecentes.html" class="projetos-imagens">
+
+                        <img src="Imagens/Missões/Missão com.png" alt="projetos-imagens"></a>
+
+                </div>
+
+                <div class="projeto-card-2">
+                    <a href="Missões/Missão com jovens/jovens.html">
+                        <img src="Imagens/Missões/ChatGPT Image 5 de mar. de 2026, 17_50_04.png" alt="projetos-imagens"
+                            class="projetos-imagens">
+                    </a>
+                </div>
+
+
+                <div class="projeto-card">
+                    <a href="Missões/Missões com homens/homens.html">
+                        <img src="Imagens/Missões/ChatGPT Image 5 de mar. de 2026, 17_54_49.png" alt="projetos-imagens"
+                            class="projetos-imagens">
+                    </a>
+                </div>
+
+
+                <div class="projeto-card-4">
+                    <a href="Missões/Missões com mulheres/mulheres.html">
+                        <img src="Imagens/Missões/ChatGPT Image 5 de mar. de 2026, 17_56_51.png" alt="projetos-imagens"
+                            class="projetos-imagens">
+                    </a>
+                </div>
+
+                <div class="projeto-card-5">
+                    <a href="Missões/Missões com Crianças/crianças.html">
+                        <img src="Imagens/Missões/ChatGPT Image 5 de mar. de 2026, 18_14_51.png" alt="projetos-imagens"
+                            class="projetos-imagens">
+                    </a>
+                </div>
+
+                <div class="projeto-card-6">
+                    <a href="">
+                        <img src="Imagens/Missões/missão calebe.png" alt="projetos-imagens" class="projetos-imagens">
+                    </a>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section class="eventos" id="eventos">
+
+
+            <div class="eventos-caixa">
+
+                <h1 class="projeto-titulo-eventos"> &mdash; Nossos Eventos &mdash; </h1>
+
+                <p class="acompanhe"> Nos acompanhe </p>
+                <ul class="caixa-links">
+                    <li>
+                        <a href="https://www.instagram.com/administeriomarituba/">
+                            <img src="Imagens/Inicio e logo/1.png" alt="image-instagram" class="image-social">
+
+                    </li>
+
+                    <li>
+                        <a href="https://www.youtube.com/@admaritubaeareametropolita6582">
+                            <img src="Imagens/Inicio e logo/2.png" alt="image-instagram" class="image-social">
+
+                    </li>
+
+                    <li>
+                        <a href="https://www.facebook.com/admtc2020">
+                            <img src="Imagens/Inicio e logo/3.png" alt="image-instagram" class="image-social">
+
+                    </li>
+
+
+                </ul>
+
+                </a>
+                <div class="instagram-icon">
+
+                </div>
+
+
+                <p class="acompanhe-texto">Assembleia de Deus Ministerio de Marituba </p>
+        </section>
+
+
+
+        <div class="slider-container">
+
+            <div class="list">
+                <div class="item active">
+                    <div class="image-event">
+                        <a href="#">
+                            <img src="Imagens/eventos/96 anos.jpg" alt="Evento 1" class="img-event" />
+                        </a>
+                    </div>
+                    <div class="event-text">
+                        <h2> &#x2728; 96 anos da Assembleia de Deus &#x2728; </h2>
+                        <br>
+                        <p>Celebrando <b> 96 anos de bênçãos, crescimento e dedicação à obra de Deus, </b> marcando
+                            gerações
+                            com fé, união e esperança.</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="image-event">
+                        <a href="#">
+                            <img src="Imagens/eventos/missão calebe.png" alt="Evento 2" class="img-event" />
+                        </a>
+                    </div>
+                    <div class="event-text">
+                        <h2>Congresso Calebe </h2>
+                        <p>Um encontro especial dedicado aos nossos <strong> Calebes,</strong> valorizando a
+                            experiência,<br> a fé e o compromisso dos idosos na missão de levar esperança.</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="image-event">
+                        <a href="#">
+                            <img src="Imagens/eventos/missões.jpg" alt="Evento 3" class="img-event" />
+                        </a>
+                    </div>
+                    <div class="event-text">
+                        <h2>Evento 3 - Imperdível!</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow">
+                <button id="prev" aria-label="Voltar">
+                    <img src="Imagens/Inicio e logo/Design sem nome.png" alt="Seta para esquerda" />
+                </button>
+                <button id="next" aria-label="Avançar">
+                    <img src="Imagens/Inicio e logo/arrow.png" alt="Seta para direita" />
+                </button>
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+
+<script src="Scripit.js"></script>
+
+
+</html>

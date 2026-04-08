@@ -55,7 +55,7 @@ body{
     color:#E1CDA4;
     text-align:center ;
     font-weight: 600;
-background: url(imagens/3.png);
+background: url(imagens/7.png);
   background-position: center center;
     background-repeat: no-repeat;
       background-size: cover;
@@ -64,7 +64,7 @@ width: 100%;
 border-radius: 10px;
 font-size: 50px;
 padding-top: 10%;
-background-color: #3C371B ;
+background-color: #531219 ;
  letter-spacing: 10px; 
 }
 
@@ -83,7 +83,7 @@ background-color: #3C371B ;
 .text-sobre-titulo{
  
     font-weight: 700;
-  color:#3C371B;
+  color:rgb(107, 29, 35);
   font-size: 45px;
   display: block;
   margin-top: 7%;
@@ -91,7 +91,7 @@ background-color: #3C371B ;
 }
 
 .sobre-adolescentes{
-    background-color: #444129;
+    background-color: rgb(107, 29, 35);
     opacity: 0.9;
     border-radius: 30px;
     padding: 20px 20px;
@@ -106,7 +106,7 @@ background-color: #3C371B ;
     transform: translateY(-10px) scale(1.05);
     /* aumenta o tamanho do card */
     transition: all 0.5s ease;
-color: #444129 ;
+color: rgb(107, 29, 35) ;
 background-color: #CD8B36;
 font-weight: 700;
 }
@@ -140,7 +140,7 @@ font-weight: 700;
     transform: translateY(-10px) scale(1.05);
     /* aumenta o tamanho do card */
     transition: all 0.5s ease;
-color: #444129 ;
+color: rgb(107, 29, 35) ;
 background-color: #BF9752;
 width: 500px;
 left: 10px;
@@ -237,9 +237,10 @@ border-radius: 20px;
 .public{
     margin-bottom: 30px;
     padding: 20px;
+  
 }
 .public-text{
-    background-color:#44412988 ;
+    background-color: rgb(107, 29, 35);
     opacity: 0.9;
     border-radius: 30px;
     padding: 20px 20px;
@@ -249,7 +250,7 @@ border-radius: 20px;
 .titulo-text{
     font-weight: 600;
     font-size: 25px;
-    color: #444129;
+    color: #FFA500;
     margin-bottom: 20px;
 }
 
@@ -259,7 +260,7 @@ border-radius: 20px;
       line-height: 1.8;       /* Espaçamento generoso entre linhas */
   letter-spacing: 1px;    /* Leve espaçamento entre letras */
   word-spacing: 3px;      /* Espaçamento maior entre palavras */
-  color: black;
+  color: #FFFFFF;
   font-weight: 600;
 }
 
@@ -291,7 +292,7 @@ border-radius: 20px;
 
 .eventos-caixa{
   text-align: center;
-   background-color: #444129;
+   background-color: rgb(107, 29, 35);
    opacity: 0.9;
     border-radius: 30px;
     padding: 20px 20px;

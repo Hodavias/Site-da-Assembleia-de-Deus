@@ -14,7 +14,9 @@
     will-change: transform, opacity;
 }
 
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+  
 @keyframes fadeInUp {
     to {
         opacity: 1;
@@ -158,63 +160,6 @@ li{
 border-radius: 20px;
 }
 
-
-/* Fundo das imagens */
-.slider-wrapper {
-  padding: 2rem;
-  position: relative;
-  max-width: 38rem;
-  margin: 0 auto;
-}
-
-.slider {
-  display: flex;
-  aspect-ratio: 20 / 21;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0%, 0%, 0%, 0.25);
-  border-radius: 0.5rem;
-  width: 100%;
-   height: auto; 
-}
-
-.slider img {
-  flex: 1 0 100%;
-  scroll-snap-align: start; /* corrigido de scroll-snap-type para scroll-snap-align */
-  object-fit: cover;
-}
-
-.slider-nav {
-  display: flex;
-  justify-content: center; /* centraliza os botões */
-  gap: 15px; /* espaçamento entre os botões */
-  position: absolute;
-  bottom: 1.25rem;
-  left: 36%;
-
-  transform: translateX(-50%);
-  z-index: 1;
-  margin-top: 10px;
-  height: 0%;
-  /* removi margin-top, pois com position absolute não faz diferença */
-}
-
-.slider-nav a {
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  background-color: #fff;
-  opacity: 0.75;
-  transition: opacity ease 250ms;
-  display: block; /* garante que o link funcione como uma caixa */
-}
-
-.slider-nav a:hover {
-  opacity: 1;
-  background-color: rgb(107, 29, 35);
-}
-
 /* Parte do video */
 .video-secsion{
     display: flex;
@@ -303,10 +248,145 @@ border-radius: 20px;
 
 
 
+/* Parte do slider de eventos */ 
 
-.coordinators-container{
+
+.slider-container {
+    position: relative;
+    margin-top: 8%;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
-    gap: 40px;
-    margin-top: 40px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  width: 45%;
+  height: 600px; /* ou o tamanho que você quiser */
+  overflow: hidden;
+
 }
+
+.list {
+    position: relative;
+    height: 720px;
+    overflow: hidden;
+
+}
+
+/* Todos os itens começam escondidos */
+.list .item {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Item ativo fica visível */
+.list .item.active {
+    display: flex;
+
+
+
+}
+
+
+.image-event img {
+    display: inline-block;
+    overflow: hidden;
+  object-position: center;
+  object-fit: cover;
+  margin-top: 20%;
+
+
+}
+
+.image-event:hover {
+
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+    cursor: pointer;
+
+}
+
+.img-event {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin-bottom: 10px;
+    opacity: 1;
+border-radius: 15px;
+
+}
+
+
+
+/* Botões de navegação */
+.arrow {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 10px;
+    pointer-events: none;
+    /* evita que a área vazia do container capture clique */
+}
+
+.arrow button {
+    pointer-events: auto;
+    /* permite clicar nos botões */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 10px;
+    background: none;
+}
+
+.arrow button:hover {
+    background-color: rgb(255, 255, 255);
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+   
+}
+
+.arrow button:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+.arrow button img {
+    width: 25px;
+    height: 25px;
+}
+
+/* Inverte a seta do botão voltar */
+.arrow button#prev img {
+    transform: scaleX(-1);
+
+}
+
+
+
+.button-menu.ativo {
+    right: 208px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--background-color);
+
+}
+
+.conteudo {
+    transition: 0.5s ease;
+}
+
+.conteudo.ativo {
+    margin-right: 100px;
+}
+
+
+

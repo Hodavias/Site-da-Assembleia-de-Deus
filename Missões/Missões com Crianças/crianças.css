@@ -55,7 +55,7 @@ body{
     color:#E1CDA4;
     text-align:center ;
     font-weight: 600;
-background: url(imagens/3.png);
+background: url(imagens/6.png);
   background-position: center center;
     background-repeat: no-repeat;
       background-size: cover;
@@ -64,7 +64,7 @@ width: 100%;
 border-radius: 10px;
 font-size: 50px;
 padding-top: 10%;
-background-color: #3C371B ;
+background-color: #b34700 ;
  letter-spacing: 10px; 
 }
 
@@ -83,7 +83,7 @@ background-color: #3C371B ;
 .text-sobre-titulo{
  
     font-weight: 700;
-  color:#3C371B;
+  color:#b34700; 
   font-size: 45px;
   display: block;
   margin-top: 7%;
@@ -91,7 +91,7 @@ background-color: #3C371B ;
 }
 
 .sobre-adolescentes{
-    background-color: #444129;
+    background-color: #b34700;
     opacity: 0.9;
     border-radius: 30px;
     padding: 20px 20px;
@@ -106,8 +106,8 @@ background-color: #3C371B ;
     transform: translateY(-10px) scale(1.05);
     /* aumenta o tamanho do card */
     transition: all 0.5s ease;
-color: #444129 ;
-background-color: #CD8B36;
+color: #b34700 ;
+background-color: #ffffff;
 font-weight: 700;
 }
 
@@ -140,8 +140,8 @@ font-weight: 700;
     transform: translateY(-10px) scale(1.05);
     /* aumenta o tamanho do card */
     transition: all 0.5s ease;
-color: #444129 ;
-background-color: #BF9752;
+color: #b34700;
+background-color: #ffffff;
 width: 500px;
 left: 10px;
 border-radius: 20px;
@@ -159,63 +159,6 @@ li{
     /* suavidade no hover */
     width: 500px;
 border-radius: 20px;
-}
-
-
-/* Fundo das imagens */
-.slider-wrapper {
-  padding: 2rem;
-  position: relative;
-  max-width: 38rem;
-  margin: 0 auto;
-}
-
-.slider {
-  display: flex;
-  aspect-ratio: 20 / 21;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0%, 0%, 0%, 0.25);
-  border-radius: 0.5rem;
-  width: 100%;
-   height: auto; 
-}
-
-.slider img {
-  flex: 1 0 100%;
-  scroll-snap-align: start; /* corrigido de scroll-snap-type para scroll-snap-align */
-  object-fit: cover;
-}
-
-.slider-nav {
-  display: flex;
-  justify-content: center; /* centraliza os botões */
-  gap: 15px; /* espaçamento entre os botões */
-  position: absolute;
-  bottom: 1.25rem;
-  left: 36%;
-
-  transform: translateX(-50%);
-  z-index: 1;
-  margin-top: 10px;
-  height: 0%;
-  /* removi margin-top, pois com position absolute não faz diferença */
-}
-
-.slider-nav a {
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  background-color: #fff;
-  opacity: 0.75;
-  transition: opacity ease 250ms;
-  display: block; /* garante que o link funcione como uma caixa */
-}
-
-.slider-nav a:hover {
-  opacity: 1;
-  background-color: rgb(107, 29, 35);
 }
 
 /* Parte do video */
@@ -239,7 +182,7 @@ border-radius: 20px;
     padding: 20px;
 }
 .public-text{
-    background-color:#44412988 ;
+    background-color:#b3480036 ;
     opacity: 0.9;
     border-radius: 30px;
     padding: 20px 20px;
@@ -249,7 +192,7 @@ border-radius: 20px;
 .titulo-text{
     font-weight: 600;
     font-size: 25px;
-    color: #444129;
+    color: #b34700;
     margin-bottom: 20px;
 }
 
@@ -291,7 +234,7 @@ border-radius: 20px;
 
 .eventos-caixa{
   text-align: center;
-   background-color: #444129;
+   background-color: #b34700;
    opacity: 0.9;
     border-radius: 30px;
     padding: 20px 20px;
@@ -313,3 +256,148 @@ border-radius: 20px;
     gap: 40px;
     margin-top: 40px;
 }
+
+
+
+
+
+/* Parte do slider de eventos */ 
+
+
+.slider-container {
+    position: relative;
+    margin-top: 8%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  width: 45%;
+  height: 600px; /* ou o tamanho que você quiser */
+  overflow: hidden;
+
+}
+
+.list {
+    position: relative;
+    height: 720px;
+    overflow: hidden;
+
+}
+
+/* Todos os itens começam escondidos */
+.list .item {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Item ativo fica visível */
+.list .item.active {
+    display: flex;
+
+
+
+}
+
+
+.image-event img {
+    display: inline-block;
+    overflow: hidden;
+  object-position: center;
+  object-fit: cover;
+  margin-top: 20%;
+
+
+}
+
+.image-event:hover {
+
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+    cursor: pointer;
+
+}
+
+.img-event {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin-bottom: 10px;
+    opacity: 1;
+border-radius: 15px;
+
+}
+
+
+
+/* Botões de navegação */
+.arrow {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 10px;
+    pointer-events: none;
+    /* evita que a área vazia do container capture clique */
+}
+
+.arrow button {
+    pointer-events: auto;
+    /* permite clicar nos botões */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 10px;
+    background: none;
+}
+
+.arrow button:hover {
+    background-color: rgb(255, 255, 255);
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+   
+}
+
+.arrow button:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+.arrow button img {
+    width: 25px;
+    height: 25px;
+}
+
+/* Inverte a seta do botão voltar */
+.arrow button#prev img {
+    transform: scaleX(-1);
+
+}
+
+
+
+.button-menu.ativo {
+    right: 208px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--background-color);
+
+}
+
+.conteudo {
+    transition: 0.5s ease;
+}
+
+.conteudo.ativo {
+    margin-right: 100px;
+}
+

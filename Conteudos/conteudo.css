@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     font-family: 'Cinzel', serif;
+}
+:root {
+    --primary-color: #ffffff;
+    --secundary-color: #000000;
+    --terciary-color: #0000FF;
+    --background-color: #08122A;
+    --text-color: #d4cdcd;
+
+}
+html {
+    scroll-behavior: smooth;
+}
+
+
+.text{
+    color:#E1CDA4;
+    text-align:center ;
+    font-weight: 600;
+background: url(imagens/man-reading-newspaper.jpg);
+  background-position: center center;
+    background-repeat: no-repeat;
+      background-size: cover;
+height: 400px;
+width: 100%;
+border-radius: 10px;
+font-size: 50px;
+padding-top: 10%;
+background-color: #00000077 ;
+ letter-spacing: 10px; 
+ z-index: 1;
+}
+
+
+.container-conteudo{
+   display: flex;
+    gap: 30px;
+    margin-top: 5%;
+
+}
+
+hr{
+    border: none;
+    height: 1px;
+    background-color: #000000;
+    margin-top: 10% ;
+    margin: 10% 0 10px 0 ;
+}
+h2{
+    color: #3C371B;
+    font-weight: 700;
+    margin-left: 5%;
+    font-size: 30px;
+    margin-top: 3%;
+}
+iframe{
+    border-radius: 12px;
+margin-left: 5%;
+margin-top: 2%;
+margin-bottom: 1%;
+
+}
+
+.card-list .card-item .card-link{
+    display: block;
+}
+
+.card-wapper{
+    display: flex;
+    align-items: center;
+ justify-content: space-around;
+ gap: 5%;
+
+}
+

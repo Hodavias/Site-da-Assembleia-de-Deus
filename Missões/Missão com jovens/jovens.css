@@ -66,6 +66,7 @@ font-size: 50px;
 padding-top: 10%;
 background-color: #3C371B ;
  letter-spacing: 10px; 
+ z-index: 1;
 }
 
 
@@ -159,63 +160,6 @@ li{
     /* suavidade no hover */
     width: 500px;
 border-radius: 20px;
-}
-
-
-/* Fundo das imagens */
-.slider-wrapper {
-  padding: 2rem;
-  position: relative;
-  max-width: 38rem;
-  margin: 0 auto;
-}
-
-.slider {
-  display: flex;
-  aspect-ratio: 20 / 21;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0%, 0%, 0%, 0.25);
-  border-radius: 0.5rem;
-  width: 100%;
-   height: auto; 
-}
-
-.slider img {
-  flex: 1 0 100%;
-  scroll-snap-align: start; /* corrigido de scroll-snap-type para scroll-snap-align */
-  object-fit: cover;
-}
-
-.slider-nav {
-  display: flex;
-  justify-content: center; /* centraliza os botões */
-  gap: 15px; /* espaçamento entre os botões */
-  position: absolute;
-  bottom: 1.25rem;
-  left: 36%;
-
-  transform: translateX(-50%);
-  z-index: 1;
-  margin-top: 10px;
-  height: 0%;
-  /* removi margin-top, pois com position absolute não faz diferença */
-}
-
-.slider-nav a {
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  background-color: #fff;
-  opacity: 0.75;
-  transition: opacity ease 250ms;
-  display: block; /* garante que o link funcione como uma caixa */
-}
-
-.slider-nav a:hover {
-  opacity: 1;
-  background-color: rgb(107, 29, 35);
 }
 
 /* Parte do video */

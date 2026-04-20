@@ -52,11 +52,10 @@ body{
 
 
 .text{
-    color:var(--primary-color);
+    color:#E1CDA4;
     text-align:center ;
-    font-weight: 700;
-background: url(imagens/7.png);
-  background-position: center center;
+    font-weight: 600;
+background: url(imagens/20.png);  background-position: center center;
     background-repeat: no-repeat;
       background-size: cover;
 height: 400px;
@@ -64,9 +63,9 @@ width: 100%;
 border-radius: 10px;
 font-size: 50px;
 padding-top: 10%;
-background-color: var(--terciary-color);
+
  letter-spacing: 10px; 
- font-family:Verdana, Geneva, Tahoma, sans-serif;
+ z-index: 1;
 }
 
 
@@ -84,7 +83,7 @@ background-color: var(--terciary-color);
 .text-sobre-titulo{
  
     font-weight: 700;
-  color:var(--terciary-color);
+  color:rgba(22, 60, 99, 1);
   font-size: 45px;
   display: block;
   margin-top: 7%;
@@ -92,23 +91,25 @@ background-color: var(--terciary-color);
 }
 
 .sobre-adolescentes{
-    background-color: var(--terciary-color);
+  background: #163C63;
+background: linear-gradient(90deg, rgba(22, 60, 99, 1) 7%, rgba(2, 80, 13, 1) 100%);
     opacity: 0.9;
     border-radius: 30px;
     padding: 20px 20px;
     margin-top: 25px;
-    color: var(--primary-color);
+    color: #FFFFFF;
     font-size: 20px;
     font-weight: 700;
 }
 
 .sobre-adolescentes:hover {
-    box-shadow: 0 10px 20px rgb(0, 0, 0);
+    box-shadow: 0 10px 20px rgba(2, 80, 13, 1);
     transform: translateY(-10px) scale(1.05);
     /* aumenta o tamanho do card */
     transition: all 0.5s ease;
-color: var(--terciary-color) ;
-background-color: var(--primary-color);
+color: #ffffff ;
+background: #163C63;
+background: linear-gradient(90deg, rgba(22, 60, 99, 1) 7%, rgba(2, 80, 13, 1) 100%);
 font-weight: 700;
 }
 
@@ -131,23 +132,29 @@ font-weight: 700;
 .pontos{
     margin-bottom: 15px;
     margin-left: 9%;
-    font-size: 19px;
+    font-size: 22px;
     padding: 50px;
-    margin-top: 7%;
+    margin-top: 5%;
     font-weight: 600;
+    margin-top: 10%;
+}
+
+.pontos ul li {
+    margin-top: 10%;
 }
 
 .pontos:hover{
- box-shadow: 0 10px 20px rgb(0, 0, 0);
+ box-shadow:  -5px -5px 10px rgba(22, 60, 99, 1) ;
+  box-shadow: 0 10px 20px rgba(2, 80, 13, 1);
     transform: translateY(-10px) scale(1.05);
     /* aumenta o tamanho do card */
-    transition: all 0.5s ease;
-color: var(--terciary-color) ;
-background-color: var(--primary-color);
+    transition: all 0.8s ease;
+color: rgba(2, 80, 13, 1) ;
 width: 500px;
 left: 10px;
 border-radius: 20px;
 font-weight: 600;
+
 }
 li{
     margin-bottom: 2rem;
@@ -157,11 +164,121 @@ li{
 
     transition: transform 0.5s ease-in;
     /* mais lento ao voltar */
-    transition: 0.4s ease;
+    transition: 0.1s ease;
     /* suavidade no hover */
     width: 500px;
 border-radius: 20px;
 }
+
+/* Parte do video */
+.video-secsion{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.video-box{
+    border-radius: 50px;
+      width: 80%;
+    height: 60%;
+}
+
+/* Publico Alvo */
+
+.public{
+    margin-bottom: 30px;
+    padding: 20px;
+}
+.public-text{
+  background: #163C63;
+background: linear-gradient(90deg, rgba(22, 60, 99, 0.418) 7%, rgba(2, 80, 12, 0.418) 100%);
+    opacity: 0.9;
+    border-radius: 30px;
+    padding: 20px 20px;
+    margin-top: 25px;
+  
+}
+
+.titulo-text{
+    font-weight: 600;
+    font-size: 30px;
+    color: rgba(2, 80, 13, 1);
+    margin-bottom: 20px;
+}
+
+.text-alvo{
+    margin-bottom: 20px;
+    font-size: 17px;
+      line-height: 1.8;       /* Espaçamento generoso entre linhas */
+  letter-spacing: 1px;    /* Leve espaçamento entre letras */
+  word-spacing: 3px;      /* Espaçamento maior entre palavras */
+  color: black;
+  font-weight: 600;
+    padding: 10px;
+}
+
+
+.image-social {
+    width: 84px;
+    height: 84px;
+    margin: 20px 20px;
+    cursor: pointer;
+    border-radius: 47px;
+
+}
+
+.image-social:hover {
+    box-shadow: 0 10px 20px #BF9752;
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+
+}
+
+.image-social:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+.eventos-caixa{
+  text-align: center;
+background: linear-gradient(90deg, rgba(22, 60, 99, 0.418) 7%, rgba(2, 80, 12, 0.418) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* Efeito de desfoque */
+    /* Borda de vidro */
+    border-color: rgba(255, 255, 255, 0.3);
+    /* Aumenta levemente */
+    transform: scale(1.08);
+    /* Sombra suave */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+   opacity: 0.9;
+    border-radius: 15px;
+    padding: 20px 20px;
+    margin-top: 25px;
+
+}
+
+.acompanhe{
+    font-weight: 600;
+    font-size: 25px;
+    color: #FFFFFF;
+}
+
+
+
+
+.coordinators-container{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
 
 
 
@@ -305,101 +422,3 @@ border-radius: 15px;
     margin-right: 100px;
 }
 
-
-
-/* Parte do video */
-.video-secsion{
-    display: flex;
-    justify-content: center;
-    margin-top: 60px;
-  margin-bottom: 60px;
-}
-
-.video-box{
-    border-radius: 50px;
-      width: 80%;
-    height: 60%;
-}
-
-/* Publico Alvo */
-
-.public{
-    margin-bottom: 30px;
-    padding: 20px;
-}
-.public-text{
-    background-color:#88878f88 ;
-    opacity: 0.9;
-    border-radius: 30px;
-    padding: 20px 20px;
-    margin-top: 25px;
-}
-
-.titulo-text{
-    font-weight: 600;
-    font-size: 30px;
-    color: var(--terciary-color);
-    margin-bottom: 20px;
-}
-
-.text-alvo{
-    margin-bottom: 20px;
-    font-size: 20px;
-      line-height: 1.8;       /* Espaçamento generoso entre linhas */
-  letter-spacing: 1px;    /* Leve espaçamento entre letras */
-  word-spacing: 3px;      /* Espaçamento maior entre palavras */
-  color: black;
-  font-weight: 600;
-}
-
-
-.image-social {
-    width: 84px;
-    height: 84px;
-    margin: 20px 20px;
-    cursor: pointer;
-    border-radius: 47px;
-
-}
-
-.image-social:hover {
-    box-shadow: 0 10px 20px rgb(0, 0, 0);
-    transform: translateY(-10px) scale(1.05);
-    /* aumenta o tamanho do card */
-    transition: all 0.5s ease;
-
-}
-
-.image-social:not(:hover) {
-
-    transition: transform 0.5s ease-in;
-    /* mais lento ao voltar */
-    transition: 0.4s ease;
-    /* suavidade no hover */
-}
-
-.eventos-caixa{
-  text-align: center;
-background: #020024;
-background: linear-gradient(359deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
-   opacity: 0.9;
-    border-radius: 30px;
-    padding: 20px 20px;
-    margin-top: 25px;
-}
-
-.acompanhe{
-    font-weight: 600;
-    font-size: 25px;
-    color: #FFFFFF;
-}
-
-
-
-
-.coordinators-container{
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 40px;
-}

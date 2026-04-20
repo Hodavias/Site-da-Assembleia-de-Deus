@@ -3,15 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Cinzel', serif;
-    opacity: 0;
-    /* escondido inicialmente */
-    transform: translateY(20px);
-    /* deslocado para baixo */
-    animation: fadeInUp 0.6s ease-out forwards;
-    /* animação para pegar a posição final */
-    animation-delay: var(--delay, 0s);
-    /* atraso para criar sequência */
-    will-change: transform, opacity;
+
 }
 
 
@@ -44,10 +36,22 @@ html {
 
 }
 
+.fade-in {
+    opacity: 0;
+    /* escondido inicialmente */
+    transform: translateY(20px);
+    /* deslocado para baixo */
+    animation: fadeInUp 0.6s ease-out forwards;
+    /* animação para pegar a posição final */
+    animation-delay: var(--delay, 0s);
+    /* atraso para criar sequência */
+    will-change: transform, opacity;
+}
+
 body {
     min-height: 100vh;
     background: #058ab3;
-    background: linear-gradient(180deg, #023b54 0%, #9adac1 100%);
+    background: linear-gradient(180deg, #023b54 0%, #023b54 100%);
 }
 
 
@@ -81,7 +85,7 @@ body {
 .menu:hover {
     box-shadow: 0 10px 20px rgb(2, 3, 37);
     background: linear-gradient(180deg, #023b54 0%, #9adac1 100%);
-    transform: translateY(-20px) scale(2.05);
+    transform: translateY(-10px) scale(1.05);
     /* aumenta o tamanho do card */
     transition: all 0.5s ease;
     cursor: pointer;
@@ -127,7 +131,7 @@ body {
 
 .link-menu:hover {
     background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(12px);
     /* Efeito de desfoque */
     /* Borda de vidro */
@@ -140,52 +144,52 @@ body {
 
 /* POSICIONAMENTO */
 .dropdown {
-  position: relative;
+    position: relative;
 }
 
 .has-submenu {
-  position: relative;
-  margin-top: 20px;
+    position: relative;
+    margin-top: 20px;
 }
 
 /* SUBMENUS */
 .submenu,
 .submenu-right {
-  position: absolute;
-  background: #eee;
-     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  min-width: 300px;
-padding: 20px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: 0.3s ease;
+    position: absolute;
+    background: #eee;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    min-width: 300px;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: 0.3s ease;
 }
 
 /* PRIMEIRO MENU */
 .submenu {
-  top: 100%;
-  left: 0;
-  border-radius: 10px;
-   list-style-type: none;
+    top: 100%;
+    left: 0;
+    border-radius: 10px;
+    list-style-type: none;
 
 
 }
 
 /* MENU LATERAL */
 .submenu-right {
-  top: 0;
-  left: 100%;
-  border-radius: 10px;
-  margin-bottom: 30px;
-  margin-left: 10%;
-   list-style-type: none;
-   font-size: 20px;
-    text-align:start;
-   
+    top: 0;
+    left: 100%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    margin-left: 10%;
+    list-style-type: none;
+    font-size: 20px;
+    text-align: start;
+
 }
 
-.submenu-right li{
+.submenu-right li {
     margin-bottom: 20px;
     width: 100%;
 }
@@ -195,32 +199,32 @@ padding: 20px;
 .has-submenu a {
     text-decoration: none;
     color: var(--secundary-color);
- margin-bottom: 20px;
- font-weight: 500;
-  padding: 10px;
-   
+    margin-bottom: 20px;
+    font-weight: 500;
+    padding: 10px;
+
 }
 
 /* HOVER (DESKTOP) */
 .dropdown:hover .submenu,
 .has-submenu:hover .submenu-right {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 /* JS ACTIVE */
 .submenu.active,
 .submenu-right.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 /* EFEITO HOVER */
 .submenu li:hover,
 .submenu-right li:hover {
-  background: #9ADAC0;
+    background: #9ADAC0;
     backdrop-filter: blur(12px);
     border-color: rgba(255, 255, 255, 0.3);
     /* Aumenta levemente */
@@ -241,25 +245,11 @@ padding: 20px;
     border-radius: 50px;
     margin-bottom: -10%;
     background: #9ADAC0;
-     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-     object-fit: cover;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
 
 }
 
-.logo-image:hover {
-    box-shadow: 0 10px 20px rgb(2, 3, 37);
-    transform: translateY(-10px) scale(1.05);
-    /* aumenta o tamanho do card */
-    transition: all 0.5s ease;
-}
-
-.logo-image:not(:hover) {
-
-    transition: transform 0.5s ease-in;
-    /* mais lento ao voltar */
-    transition: 0.4s ease;
-    /* suavidade no hover */
-}
 
 .image-logo {
     display: flex;
@@ -267,32 +257,35 @@ padding: 20px;
 }
 
 
-.button-logo-container{
+.button-logo-container {
     display: flex;
     justify-content: space-around;
-      top: 25px;
+    top: 25px;
     left: 0;
     right: 0;
     z-index: 1000;
-     margin-bottom: 10%;
+    margin-bottom: 10%;
 
 }
-.button-logo-container a{
-text-decoration: none;
-color: #ffffff;
-font-size: 25px;
 
-padding: 20px;
-border-radius: 5px;
+.button-logo-container a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 25px;
+
+    padding: 20px;
+    border-radius: 5px;
 }
-.button-logo:hover{
-    box-shadow: 0 10px 20px rgb(2, 3, 37);
-    transform: translateY(-10px) scale(1.10);
+
+.button-logo:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px) scale(1.05);
     /* aumenta o tamanho do card */
-    transition: all 0.7s ease;
+    transition: transform 0.7s ease, box-shadow 0.7s ease;
     border: #9ADAC0 solid 1px;
 
 }
+
 .button-logo:not(:hover) {
 
     transition: transform 0.5s ease-in;
@@ -301,9 +294,9 @@ border-radius: 5px;
     /* suavidade no hover */
 }
 
-
+/* Sobre a igreja */
 .sobre-a-igreja {
-    background: rgba(181, 183, 206, 0.6);
+    background: #fdfbef;
 
     color: var(--secundary-color);
     margin-top: 5%;
@@ -318,10 +311,10 @@ border-radius: 5px;
 }
 
 .sobre-a-igreja:hover {
-    box-shadow: 0 10px 20px rgb(2, 3, 37);
-    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px) scale(1.02);
     /* aumenta o tamanho do card */
-    transition: all 0.5s ease;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
     cursor: pointer;
 }
 
@@ -336,15 +329,61 @@ border-radius: 5px;
 
 .texto-sobre {
     text-align: center;
+    font-size: 20px;
+    color: #023b54;
 }
 
-.pergunta-sobre {
-    font-size: 20px;
+.texto-sobre- {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 500;
     margin-top: 2%;
+    color: #023b54;
+
+}
+
+
+.pergunta-sobre {
+    font-size: 30px;
+    margin-top: 5%;
     margin-bottom: 2%;
     font-weight: 600;
 }
 
+/* Parte dos números de apresentação */
+
+.apresentantion-number {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.container-apresentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    background-color: #023b54;
+    border-radius: 15px;
+}
+
+.text-apresentation {
+    font-size: 20px;
+    font-weight: 500;
+    color: #9adac1;
+    margin-bottom: 5%;
+}
+
+.numero {
+    font-size: 37px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-top: 5%;
+}
+
+/* Botão de vídeo explicativo */
 
 .my-button {
     text-decoration: none;
@@ -383,8 +422,8 @@ border-radius: 5px;
 
 .my-button:hover {
     background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     /* Efeito de desfoque */
     /* Borda de vidro */
     border-color: rgba(255, 255, 255, 0.3);
@@ -454,218 +493,261 @@ border-radius: 5px;
 
 /* Caixa de Missões */
 
-
-
-.projetos {
-    padding: 6rem 2rem;
-
-}
-
-
-.projeto-titulo {
+.section-title {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    background: -webkit-linear-gradient(#0e0047, #8283ac);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 4vw, 42px);
+    font-weight: 900;
+    color: rgb(235, 235, 235);
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+
 
 }
 
-.projeto-card {
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 16px;
-    backdrop-filter: blur(5px);
-    border: 1px solid var(--secondary-color);
-    margin: 2rem;
+/* ── ÁREA DO CARROSSEL ── */
+.carousel-area {
+    position: relative;
+    padding: 0 56px;
+}
+
+.carousel-overflow {
     overflow: hidden;
+    border-radius: 18px;
 }
 
-.projeto-card-1 {
-    background: rgba(0, 0, 0, 0.6);
+.carousel-track {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+/* ── CARD ── */
+.card {
+    flex: 0 0 calc(25% - 12px);
     border-radius: 16px;
-    backdrop-filter: blur(5px);
-    border: 1px solid var(--secondary-color);
-    margin: 2rem;
     overflow: hidden;
-    width: 314px;
-    height: 478px;
-}
-
-.projeto-card-1:hover {
-    box-shadow: 0 20px 30px rgb(86, 21, 21);
-    transform: translateY(-10px) scale(1.05);
-    /* aumenta o tamanho do card */
-    transition: all 0.5s ease;
+    border: 1.5px solid var(--card-border);
+    background: var(--card-bg);
+    aspect-ratio: 3/4;
+    position: relative;
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.projeto-card-1:not(:hover) {
-
-    transition: transform 0.5s ease-in;
-    /* mais lento ao voltar */
-    transition: 0.4s ease;
-    /* suavidade no hover */
+.card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-.projeto-card-2 {
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 16px;
-    backdrop-filter: blur(5px);
-    border: 1px solid var(--secondary-color);
-    margin: 2rem;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
-
-.projeto-card-2:hover {
-    box-shadow: 0 20px 30px rgb(29, 56, 7);
-    transform: translateY(-15px) scale(1.09);
-    /* aumenta o tamanho do card */
-    transition: all 0.7s ease;
-    cursor: pointer;
-}
-
-.projeto-card-2:not(:hover) {
-
-    transition: transform 0.5s ease-in;
-    /* mais lento ao voltar */
-    transition: 0.4s ease;
-    /* suavidade no hover */
-}
-
-.projeto-card-4 {
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 16px;
-    backdrop-filter: blur(5px);
-    border: 1px solid var(--secondary-color);
-    margin: 2rem;
-    overflow: hidden;
-}
-
-.projeto-card-4:hover {
-    box-shadow: 0 20px 30px rgb(121, 6, 54);
-    transform: translateY(-10px) scale(1.05);
-    /* aumenta o tamanho do card */
-    transition: all 0.5s ease;
-    cursor: pointer;
-}
-
-.projeto-card-4:not(:hover) {
-
-    transition: transform 0.5s ease-in;
-    /* mais lento ao voltar */
-    transition: 0.4s ease;
-    /* suavidade no hover */
-}
-
-.projeto-card-5 {
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 16px;
-    backdrop-filter: blur(5px);
-    border: 1px solid var(--secondary-color);
-    margin: 2rem;
-    overflow: hidden;
-}
-
-.projeto-card-5:hover {
-    box-shadow: 0 20px 30px rgb(205, 70, 2);
-    transform: translateY(-10px) scale(1.05);
-    /* aumenta o tamanho do card */
-    transition: all 0.5s ease;
-    cursor: pointer;
-}
-
-.projeto-card-5:not(:hover) {
-
-    transition: transform 0.5s ease-in;
-    /* mais lento ao voltar */
-    transition: 0.4s ease;
-    /* suavidade no hover */
-}
-
-.projeto-card:hover {
-    box-shadow: 0 20px 30px rgb(2, 3, 37);
-    transform: translateY(-10px) scale(1.05);
-    /* aumenta o tamanho do card */
-    transition: all 0.5s ease;
-    cursor: pointer;
-}
-
-.projeto-card:not(:hover) {
-
-    transition: transform 0.5s ease-in;
-    /* mais lento ao voltar */
-    transition: 0.4s ease;
-    /* suavidade no hover */
-}
-
-.projeto-card-6 {
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 16px;
-    backdrop-filter: blur(5px);
-    border: 1px solid var(--secondary-color);
-    margin: 2rem;
-    overflow: hidden;
-}
-
-.projeto-card-6:hover {
-    box-shadow: 0 20px 30px rgb(2, 97, 205);
-    transform: translateY(-10px) scale(1.05);
-    /* aumenta o tamanho do card */
-    transition: all 0.5s ease;
-    cursor: pointer;
-}
-
-.projeto-card-6:not(:hover) {
-
-    transition: transform 0.5s ease-in;
-    /* mais lento ao voltar */
-    transition: 0.4s ease;
-    /* suavidade no hover */
-}
-
-
-
-.projetos-caixa {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-
-}
-
-.projetos-imagens {
-    height: 100%;
-    /* altura da imagem */
+/* Imagem do card — substitua src pela sua imagem real */
+.card img {
     width: 100%;
-    /* largura da imagem */
+    height: 100%;
     object-fit: cover;
+    display: block;
+    border-radius: 14px;
 }
 
-
-.info-projetos {
-    margin-bottom: 5px;
-}
-
-.paragrafo-projetos {
-    color: #E9ECEF;
-    line-height: 1.25rem;
-}
-
-.caixa-texto-projeto {
+/* Placeholder para quando não há imagem */
+.card-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
     padding: 1.5rem;
+    text-align: center;
+    border-radius: 14px;
 }
 
+.card-placeholder a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.card-subtitle {
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.75);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ── BOTÕES NAV ── */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--btn-bg);
+    color: var(--btn-color);
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s, opacity 0.2s;
+    z-index: 10;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.nav-btn:hover {
+    background: var(--btn-hover);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+    transform: translateY(-50%) scale(1);
+}
+
+.nav-prev {
+    left: 0;
+}
+
+.nav-next {
+    right: 0;
+}
+
+/* ── DOTS ── */
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--dot-inactive);
+    border: none;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.25s;
+    padding: 0;
+}
+
+.dot.active {
+    background: var(--dot-active);
+    transform: scale(1.35);
+}
+
+/* ── MINIATURAS ── */
+.thumbnails {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.thumb {
+    width: 54px;
+    height: 70px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+    flex-shrink: 0;
+}
+
+.thumb:hover {
+    transform: scale(1.08);
+}
+
+.thumb.active {
+    border-color: var(--thumb-border);
+    transform: scale(1.1);
+}
+
+.texto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 1%;
+    color: #fdfbef;
+}
+
+.thumb-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.thumb-dot {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+}
+
+.thumb-label {
+    font-size: 8px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+/* ── RESPONSIVO ── */
+@media (max-width: 768px) {
+    .card {
+        flex: 0 0 calc(50% - 8px);
+    }
+
+    .carousel-area {
+        padding: 0 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex: 0 0 calc(80% - 8px);
+    }
+
+    .carousel-area {
+        padding: 0 44px;
+    }
+}
 
 /* Parte de Eventos */
+
+
 
 .eventos {
     background-color: #E9ECEF;
     margin-top: 5%;
-    width: 80%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding: 3%;
@@ -705,6 +787,106 @@ border-radius: 5px;
 }
 
 
+.container-eventos {
+    display: grid;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    overflow: hidden;
+    border-radius: 18px;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+
+
+.foto-evento {
+    padding: 20px;
+
+}
+
+.foto-evento button {
+    border: none;
+    opacity: 1;
+    transition: opacity 0.3s;
+    object-fit: cover;
+    background: none;
+    border-radius: 20px;
+display: inline-block;
+position: relative;
+}
+
+
+
+.foto-evento button:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: transform 0.7s ease, box-shadow 0.7s ease;
+    border: #9ADAC0 solid 1px;
+
+  
+
+}
+
+.foto-evento button:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+.foto-evento button::after{
+ content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* transparente */
+  transition: 0.3s;
+
+}
+
+
+
+.foto-evento button:hover::after{
+     background-color: rgba(0, 0, 0, 0.5); /* preto com opacidade */
+     border-radius: 20px;
+}
+
+
+.foto-evento button img {
+    margin: 20px 20px;
+    cursor: pointer;
+    border-radius: 17px;
+    opacity: 1;
+    transition: opacity 0.3s;
+    object-fit: cover;
+    border: none;
+    width: 80%;
+    /* Define a largura para caberem 3 lado a lado */
+    height: 100%;
+
+}
+
+
+
+
+
+.foto-evento button p {
+    padding: 50%;
+}
+
+
+.foto-evento.ativo {
+    position: relative;
+
+}
+
+
+
 .image-social {
     width: 54px;
     height: 54px;
@@ -718,11 +900,11 @@ border-radius: 5px;
 
 .image-social:hover {
     box-shadow: 0 10px 20px rgb(19, 40, 97);
-    transform: translateY(-10px) scale(2.05);
+    transform: translateY(-10px) scale(1.05);
     /* aumenta o tamanho do card */
     transition: all 0.5s ease;
 
-    opacity: 0.7;
+    opacity: 0.5;
 }
 
 .image-social:not(:hover) {
@@ -735,184 +917,274 @@ border-radius: 5px;
 
 
 
-/* Parte da sesão de eventos  */
+/* parte de doação do site */
 
-
-
-
-.slider-container {
-    position: relative;
-    width: 90vw;
-    margin-top: 2%;
-    border-radius: 10px;
-    padding: 20px;
-    margin-left: 5vw;
-
-}
-
-.list {
-    position: relative;
-    height: 720px;
-    overflow: hidden;
-
-}
-
-/* Todos os itens começam escondidos */
-.list .item {
-    display: none;
+.box-doacao {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-
-}
-
-/* Item ativo fica visível */
-.list .item.active {
-    display: flex;
 
 
-
-}
-
-
-.image-event a {
-    display: inline-block;
-    border-radius: 10px;
-    overflow: hidden;
-
-
-}
-
-.image-event:hover {
-
-    transform: translateY(-10px) scale(1.05);
-    /* aumenta o tamanho do card */
-    transition: all 0.5s ease;
-    cursor: pointer;
-
-}
-
-.img-event {
-    width: 780px;
-    height: 580px;
-    object-fit: cover;
-    display: block;
-    border-radius: 20px;
-    margin-bottom: 10px;
-    opacity: 1;
-
-}
-
-.event-text {
-    color: var(--primary-color);
-    background: #0008ff;
-    background: radial-gradient(circle, rgb(0, 58, 134) 0%, rgba(0, 7, 64, 1) 100%);
-    width: 80%;
-    border-radius: 10px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.event-text:hover {
-
-    transform: translateY(-4px);
-    box-shadow: 0 5px 15px rgba(183, 186, 194, 0.8);
-    /* aumenta o tamanho do card */
-    transition: all 0.5s ease;
-    cursor: pointer;
-    color: #FFA500;
-}
-
-.event-text:not(:hover) {
-
-    transition: transform 0.5s ease-in;
-    /* mais lento ao voltar */
-    transition: 0.4s ease;
-    /* suavidade no hover */
-}
-
-.event-text h2 {
-
-    margin: 0;
-    margin-top: 10px;
-    font-size: 1.5rem;
-    color: #ffffff;
-}
-
-.event-text p {
+    margin-top: 5%;
     margin-bottom: 2%;
-    font-size: 90%;
+    color: var(--primary-color);
 }
 
-/* Botões de navegação */
-.arrow {
-    position: absolute;
-    top: 50%;
-    width: 100%;
+.doacao {
+    align-items: center;
+padding-bottom: 10%;
+
+}
+
+.doacao-container{
     display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    padding: 0 10px;
-    pointer-events: none;
-    /* evita que a área vazia do container capture clique */
+    align-items: center;
+    justify-content: center;
 }
 
-.arrow button {
-    pointer-events: auto;
-    /* permite clicar nos botões */
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    padding: 10px;
-    background: none;
+.text-doacao {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    color: var(--primary-color);
+    font-size: 20px;
 }
 
-.arrow button:hover {
-    background-color: #e4e0e0;
-    transform: translateY(-10px) scale(1.05);
+
+.container-icons {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto 0 auto;
+    gap: 40px;
+    padding: 0 100px;
+}
+
+.box-icons {
+    width: 80px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+background-color: #fdfbef;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: all 1.0s cubic-bezier(.25, .1, .25, 1);
+    width: 250px;
+    height: 90px;
+    padding: 0;
+    gap: 10px;
+    margin-top: 20px;
+   
+}
+
+.box-icons:hover {
+    box-shadow: 0 10px 20px rgb(2, 3, 37);
+
+    transform: translateY(-5px) scale(1);
     /* aumenta o tamanho do card */
-    transition: all 0.5s ease;
+    transition: all 0.8s ease;
+    cursor: pointer;
 }
 
-.arrow button:not(:hover) {
+.box-icons:not(:hover) {
 
-    transition: transform 0.5s ease-in;
+    transition: transform 0.8s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.6s ease;
+    /* suavidade no hover */
+}
+
+.img-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.text-icon {
+    font-size: 15px;
+   color: #023b54;
+   font-weight: 700;
+}
+
+
+.box-icons a {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    text-decoration: none;
+    background: none;
+    border: none;
+    font-size: 18px;
+}
+
+.content h1{
+    margin-bottom: 20px;
+    font-size: 35px;
+
+}
+
+.content p{
+    font-size: 20px;
+}
+
+/* Parte do qrcode pix */ 
+
+.container-pix{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+
+}
+
+.img-pix{
+    width: 200px;
+    height: 200px;
+margin-left: 25%;
+}
+
+
+.text-pix{
+    font-size: 20px;
+    margin: 20px 20px 20px 23%;
+color: var(--primary-color);
+}
+
+.titulo-pix{
+    font-size: 20px;
+    font-weight: bold;
+color: var(--primary-color);
+}
+
+
+
+
+/* Parte do footer do site */ 
+
+.box-footer{
+    background-color: #fdfbef ;
+}
+
+
+.container-footer{
+display: flex;
+align-items: center;
+justify-content: space-around;
+padding: 2% 15% 3% 15%;
+
+
+}
+.img-footer{
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.text-footer{
+    margin: 0 10% 0 10% ;
+}
+
+.titulo-footer{
+margin: 20px 0 20px 0;
+font-size: 30px;
+color: #023b54 ;
+}
+
+.paragrafo-footer{
+font-size: 18px;
+font-weight: 600;
+color: #023b54 ;
+}
+
+.continer-icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  gap: 20%;
+}
+
+.continer-icons a{
+font-size: 40px;
+text-decoration: none;
+color:#023b54 ;
+border-radius: 10px;
+}
+
+.continer-icons a:hover{
+
+ transform: translateY(-5px) scale(1);
+    /* aumenta o tamanho do card */
+    transition: all 0.4s ease;
+    cursor: pointer; transform: translateY(-5px) scale(1);
+    /* aumenta o tamanho do card */
+    transition: all 0.4s ease;
+    cursor: pointer;
+color: #fdfbef ;
+background-color: #023b54 ;
+border-radius: 10px;
+}
+
+.continer-icons a:not(:hover) {
+
+    transition: transform 0.4s ease-in;
     /* mais lento ao voltar */
     transition: 0.4s ease;
     /* suavidade no hover */
 }
 
-.arrow button img {
-    width: 25px;
-    height: 25px;
+.conclusão{
+    background-color: #023b54;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
 }
 
-/* Inverte a seta do botão voltar */
-.arrow button#prev img {
-    transform: scaleX(-1);
-
+.conclusão h3{
+    color: #fdfbef;
+font-size: 15px;
 }
 
-
-
-.button-menu.ativo {
-    right: 208px;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: var(--background-color);
-
-}
-
-.conteudo {
-    transition: 0.5s ease;
-}
-
-.conteudo.ativo {
-    margin-right: 100px;
+.conclusão img{
+    width: 100px;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 10px;
 }
 
 
+.conclusão img:hover{
+  box-shadow: 0 10px 20px rgb(221, 222, 228);
+ transform: translateY(-5px) scale(1);
+    /* aumenta o tamanho do card */
+    transition: all 0.4s ease;
+    cursor: pointer; transform: translateY(-5px) scale(1);
+    /* aumenta o tamanho do card */
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.conclusão img:not(:hover) {
+
+    transition: transform 0.4s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
 
 
+.box-conclusão{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
 
 
 @media screen and (max-width: 700px) {
@@ -939,7 +1211,3 @@ border-radius: 5px;
 
 
 }
-
-
-
-

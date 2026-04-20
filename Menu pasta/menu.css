@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cinzel', serif;
+    opacity: 0;
+    /* escondido inicialmente */
+    transform: translateY(20px);
+    /* deslocado para baixo */
+    animation: fadeInUp 0.6s ease-out forwards;
+    /* animação para pegar a posição final */
+    animation-delay: var(--delay, 0s);
+    /* atraso para criar sequência */
+    will-change: transform, opacity;
+}
+
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .entry {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+:root {
+    --primary-color: #ffffff;
+    --secundary-color: #000000;
+    --terciary-color: #0000FF;
+    --background-color: #08122A;
+    --text-color: #696969;
+
+}
+
+body {
+    min-height: 100vh;
+}
+
+
+#menu{
+      position: fixed;   /* fixa no topo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.navegacao {
+    display: flex;
+    justify-content: space-around;
+    position: sticky;
+    top: -25px;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+
+}
+
+/* Parte do menu de ativação */
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    transition: all 1.0s cubic-bezier(.25, .1, .25, 1);
+    list-style: none;
+    margin: 30px;
+
+}
+
+.menu:hover {
+    box-shadow: 0 10px 20px rgb(2, 3, 37);
+    background: linear-gradient(180deg, #023b54 0%, #9adac1 100%);
+    transform: translateY(-20px) scale(2.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.menu:not(:hover) {
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+.link-menu {
+    color: var(--secundary-color);
+    display: flex;
+    padding: 15px 40px;
+    position: relative;
+
+    /* Começa transparente */
+    background: transparent;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+
+    /* Borda invisível no início */
+    border: 1px solid transparent;
+    border-radius: 12px;
+
+    /* Texto */
+    color: rgb(5, 4, 4);
+    text-decoration: none;
+    font-weight: 500;
+
+    /* TRANSIÇÃO SUAVE (ida E volta) ✨ */
+    transition:
+        background 0.4s ease,
+        backdrop-filter 0.4s ease,
+        -webkit-backdrop-filter 0.4s ease,
+        border-color 0.4s ease,
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+}
+
+.link-menu:hover {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* Efeito de desfoque */
+    /* Borda de vidro */
+    border-color: rgba(255, 255, 255, 0.3);
+    /* Aumenta levemente */
+    transform: scale(1.08);
+    /* Sombra suave */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* POSICIONAMENTO */
+.dropdown {
+  position: relative;
+}
+
+.has-submenu {
+  position: relative;
+  margin-top: 20px;
+}
+
+/* SUBMENUS */
+.submenu,
+.submenu-right {
+  position: absolute;
+  background: #eee;
+     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  min-width: 300px;
+padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: 0.3s ease;
+}
+
+/* PRIMEIRO MENU */
+.submenu {
+  top: 100%;
+  left: 0;
+  border-radius: 10px;
+   list-style-type: none;
+
+
+}
+
+/* MENU LATERAL */
+.submenu-right {
+  top: 0;
+  left: 100%;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  margin-left: 10%;
+   list-style-type: none;
+   font-size: 20px;
+    text-align:start;
+   
+}
+
+.submenu-right li{
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+
+
+.has-submenu a {
+    text-decoration: none;
+    color: var(--secundary-color);
+ margin-bottom: 20px;
+ font-weight: 500;
+  padding: 10px;
+   
+}
+
+/* HOVER (DESKTOP) */
+.dropdown:hover .submenu,
+.has-submenu:hover .submenu-right {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* JS ACTIVE */
+.submenu.active,
+.submenu-right.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* EFEITO HOVER */
+.submenu li:hover,
+.submenu-right li:hover {
+  background: #9ADAC0;
+    backdrop-filter: blur(12px);
+    border-color: rgba(255, 255, 255, 0.3);
+    /* Aumenta levemente */
+    transform: scale(1.08);
+    /* Sombra suave */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}

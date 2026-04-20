@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/png" href="Imagens/Inicio e logo/ChatGPT Image 29 de jan. de 2026, 18_28_27.png">
-    <script src="https://kit.fontawesome.com/9a55ea5818.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/3ba8575527.js" crossorigin="anonymous"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
@@ -18,18 +18,29 @@
 
 <body>
 
+    <div class="fade-in"></div>
 
-
-    <nav class="navegacao">
+    <nav class="navegacao" id="menu">
 
         <ul class="menu">
             <li>
                 <a href="#home" class="link-menu"> HOME </a>
             </li>
 
-            <li>
-                <a href="#sobre" class="link-menu"> SOBRE </a>
+            <li class="dropdown">
+                <a href="#" class="link-menu">SOBRE ▾</a>
+
+                <ul class="submenu">
+                    <li class="has-submenu">
+                        <a href="#sobre">SOBRE A IGREJA </a>
+                    </li>
+
+                    <li class="has-submenu">
+                        <a href="#">LIDERES </a>
+                    </li>
+                </ul>
             </li>
+            
 
             <li class="dropdown">
                 <a href="#" class="link-menu">MISSÕES ▾</a>
@@ -45,8 +56,7 @@
                             <li><a href="Missões/Missões com mulheres/mulheres.html">Mulheres</a></li>
                             <li><a href="Missões/Missões com Crianças/crianças.html">Crianças</a></li>
                             <li><a href="Missões/Missão calebe/calebe.html">Calebe (3ª idade)</a></li>
-                            <li><a href="#">Diaconal</a></li>
-                            <li><a href="#">Eventos</a></li>
+                            <li><a href="Missões/Missões Eventos/eventos.html">Eventos</a></li>
 
                         </ul>
                     </li>
@@ -64,6 +74,7 @@
                             <li><a href="#">EBD</a></li>
                             <li><a href="#">IBADMA</a></li>
                             <li><a href="#">Células Missionárias</a></li>
+                            <li><a href="#">Diaconal</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -74,7 +85,7 @@
                 <a href="#eventos" class="link-menu"> EVENTOS </a>
             </li>
             <li>
-                <a href="#conteudos" class="link-menu"> CONTEUDOS </a>
+                <a href="Conteudos/conteudo.html" class="link-menu"> CONTEUDOS </a>
             </li>
 
 
@@ -85,9 +96,10 @@
         </ul>
 
     </nav>
+
     <div class="conteudo">
         <div class="image-logo">
-            <img id="home" src="Imagens/Inicio e logo/imagem97.jpeg" class="logo-image">
+            <img id="home" src="Imagens/Inicio e logo/WhatsApp Image 2026-04-14 at 5.00.02 PM.jpeg" class="logo-image">
         </div>
 
         <div class="button-logo-container">
@@ -100,19 +112,45 @@
 
         <div class="sobre-a-igreja" id="sobre">
             <div class="texto-sobre">
-                <h1 class="titulo-sobre"> Assembleia de Deus em Marituba </h1>
-                <p class="pergunta-sobre"> Quem somos ? </p>
+                <h1 class="titulo-sobre"> Assembleia de Deus Ministerio Marituba </h1>
 
-                <p class="texto-sobre"> A Assembleia de Deus em Marituba é uma igreja cristã que se dedica ao serviço de
-                    Deus e à comunidade
-                    local. </p>
+
+
+                <p class="texto-sobre-"> Bem-vindo à Assembleia de Deus Ministério de Marituba, uma igreja comprometida
+                    em servir a Deus e compartilhar o amor de Cristo com toda a comunidade. Desde o início de sua
+                    jornada, tem se dedicado à pregação do evangelho, fortalecendo vidas por meio da fé, da esperança e
+                    da comunhão. Nosso propósito é impactar positivamente cada pessoa, levando a palavra de Deus,
+                    promovendo o cuidado espiritual e incentivando uma vida transformada pela presença do Senhor.</p>
+
+                <div class="apresentantion-number">
+                    <div class="container-apresentation">
+                        <h3 class="text-apresentation">Missões </h3>
+                        <span class="numero" data-valor="16">0</span>
+                    </div>
+
+                    <div class="container-apresentation">
+                        <h3 class="text-apresentation">Templos</h3>
+                        <span class="numero" data-valor="115">0</span>
+                    </div>
+
+                    <div class="container-apresentation">
+                        <h3 class="text-apresentation">Membros</h3>
+                        <span class="numero" data-valor="10000">0</span>
+                    </div>
+
+                    <div class="container-apresentation">
+                        <h3 class="text-apresentation">Anos de existência</h3>
+                        <span class="numero" data-valor="97">0</span>
+                    </div>
+
+                </div>
 
 
 
 
                 <div class="video-explicativo">
 
-                    <p class="texto-video"> Assista ao vídeo e saiba mais sobre a nossa igreja </p>
+
                     <button onclick="abrirVideo()" id="btnPlay" class="my-button">▶ Nossa Historia</button>
 
                     <!-- Modal do vídeo (começa escondido) -->
@@ -141,63 +179,155 @@
 
         <!-- seção de missões -->
 
-        <section id="missoes" class="projetos"> <!-- pagina aonde ficara os projetos -->
-            <h2 class="projeto-titulo">Nossas Missões </h2>
-            <div class="projetos-caixa">
 
-                <div class="projeto-card-1">
-                    <a href="Missões/Missões com adolecentes/adolecentes.html" class="projetos-imagens">
+        <section class="section">
 
-                        <img src="Imagens/Missões/Missão com.png" alt="projetos-imagens"></a>
+            <P class="texto"> &mdash;&mdash; Geração que Anuncia &mdash;&mdash;</P>
+            <h2 class="section-title"> Geração em Geração, Anunciando Jesus</h2>
 
+            <div class="carousel-area">
+                <button class="nav-btn nav-prev" id="prevBtn" aria-label="Anterior">&#8592;</button>
+
+                <div class="carousel-overflow">
+                    <div class="carousel-track" id="track">
+
+
+
+
+                        <!-- CARD 1 — Jovens -->
+                        <div class="card">
+                            <div class="card-placeholder">
+
+                                <a href="Missões/Missões com adolecentes/adolecentes.html">
+                                    <img src="Imagens/Missões/Adolescentes.png" alt="Missão com Jovens">
+                                </a>
+                            </div>
+
+                        </div>
+
+
+                        <div class="card">
+                            <div class="card-placeholder">
+
+                                <a href="Missões/Missão com jovens/jovens.html">
+                                    <img src="Imagens/Missões/jovens.png" alt="Missão com Jovens">
+                                </a>
+                            </div>
+
+                        </div>
+
+
+                        <!-- CARD 2 — Homens -->
+                        <div class="card">
+                            <div class="card-placeholder">
+                                <a href="Missões/Missões com homens/homens.html">
+                                    <img src="Imagens/Missões/homens.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- CARD 3 — Mulheres -->
+                        <div class="card">
+                            <div class="card-placeholder">
+                                <a href="Missões/Missões com mulheres/mulheres.html"> <img
+                                        src="Imagens/Missões/mulheres.png" alt=""></a>
+                            </div>
+                        </div>
+
+                        <!-- CARD 4 — Crianças -->
+                        <div class="card">
+                            <div class="card-placeholder">
+                                <a href="Missões/Missões com Crianças/crianças.html"><img
+                                        src="Imagens/Missões/crianças.png" alt="imagem de crianças "></a>
+                            </div>
+                        </div>
+
+                        <!-- CARD 5 — Famílias -->
+                        <div class="card">
+                            <div class="card-placeholder">
+                                <a href="Missões/Missões Eventos/eventos.html"> <img src="Imagens/Missões/96 anos.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- CARD 6 — Idosos -->
+                        <div class="card">
+                            <div class="card-placeholder" ">
+        <a href=" Missões/Missão calebe/calebe.html">
+                                <img src="Imagens/Missões/missão calebe.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+
+
+
+
+                        <!-- Adicione mais cards aqui seguindo o mesmo padrão -->
+
+                    </div>
                 </div>
 
-                <div class="projeto-card-2">
-                    <a href="Missões/Missão com jovens/jovens.html">
-                        <img src="Imagens/Missões/ChatGPT Image 5 de mar. de 2026, 17_50_04.png" alt="projetos-imagens"
-                            class="projetos-imagens">
-                    </a>
-                </div>
-
-
-                <div class="projeto-card">
-                    <a href="Missões/Missões com homens/homens.html">
-                        <img src="Imagens/Missões/ChatGPT Image 5 de mar. de 2026, 17_54_49.png" alt="projetos-imagens"
-                            class="projetos-imagens">
-                    </a>
-                </div>
-
-
-                <div class="projeto-card-4">
-                    <a href="Missões/Missões com mulheres/mulheres.html">
-                        <img src="Imagens/Missões/ChatGPT Image 5 de mar. de 2026, 17_56_51.png" alt="projetos-imagens"
-                            class="projetos-imagens">
-                    </a>
-                </div>
-
-                <div class="projeto-card-5">
-                    <a href="Missões/Missões com Crianças/crianças.html">
-                        <img src="Imagens/Missões/ChatGPT Image 5 de mar. de 2026, 18_14_51.png" alt="projetos-imagens"
-                            class="projetos-imagens">
-                    </a>
-                </div>
-
-                <div class="projeto-card-6">
-                    <a href="Missões/Missão calebe/calebe.html">
-                        <img src="Imagens/Missões/missão calebe.png" alt="projetos-imagens" class="projetos-imagens">
-                    </a>
-                </div>
-
-
+                <button class="nav-btn nav-next" id="nextBtn" aria-label="Próximo">&#8594;</button>
             </div>
+
+            <!-- DOTS -->
+            <div class="dots" id="dots"></div>
+
+            <!-- MINIATURAS -->
+            <div class="thumbnails" id="thumbs"></div>
         </section>
+
+
+
+
+
+
+
+
+
 
         <section class="eventos" id="eventos">
 
 
             <div class="eventos-caixa">
 
-                <h1 class="projeto-titulo-eventos"> &mdash; Nossos Eventos &mdash; </h1>
+                <h1 class="projeto-titulo-eventos"> &mdash;&mdash;&mdash; Mantenha-se Informado &mdash;&mdash;&mdash;
+                </h1>
+
+                <div class="container-eventos">
+                    <div class="foto-evento">
+                        <button onclick="abrirFoto(0)" id="btnOpen"> <img src="Imagens/eventos/96 anos.jpg"
+                                alt=""></button>
+                        <p class="texto-evento">96 anos de bênçãos, <br> crescimento e dedicação à obra de Deus,
+                            <br>
+                            marcando
+                            gerações
+                            com fé, união e esperança.
+                        </p>
+                    </div>
+
+                    <div class="foto-evento">
+                        <button onclick="abrirFoto(1)" id="btnOpen">
+                            <img src="Imagens/eventos/WhatsApp Image 2026-04-13 at 8.58.19 PM.jpeg" alt="">
+                        </button>
+                        <p class="texto-evento">Um encontro especial dedicado aos nossos <strong> Discipulos gerando
+                                discipulos </strong>
+
+                    </div>
+
+                    <div class="foto-evento">
+                        <button onclick="abrirFoto(2)" id="btnOpen">
+                            <img src="Imagens/eventos/missões.jpg" alt="">
+                        </button>
+                        <p class="texto-evento">Congresso de Missões, um congresso marcado por almas para Cristo </p>
+                    </div>
+
+                </div>
+
+
+
+
 
                 <p class="acompanhe"> Nos acompanhe </p>
                 <ul class="caixa-links">
@@ -235,59 +365,112 @@
 
         <div class="slider-container">
 
-            <div class="list">
-                <div class="item active">
-                    <div class="image-event">
-                        <a href="#">
-                            <img src="Imagens/eventos/96 anos.jpg" alt="Evento 1" class="img-event" />
-                        </a>
-                    </div>
-                    <div class="event-text">
-                        <h2> &#x2728; 96 anos da Assembleia de Deus &#x2728; </h2>
-                        <br>
-                        <p>Celebrando <b> 96 anos de bênçãos, crescimento e dedicação à obra de Deus, </b> marcando
-                            gerações
-                            com fé, união e esperança.</p>
-                    </div>
-                </div>
 
-                <div class="item">
-                    <div class="image-event">
-                        <a href="#">
-                            <img src="Imagens/eventos/missão calebe.png" alt="Evento 2" class="img-event" />
-                        </a>
-                    </div>
-                    <div class="event-text">
-                        <h2>Congresso Calebe </h2>
-                        <p>Um encontro especial dedicado aos nossos <strong> Calebes,</strong> valorizando a
-                            experiência,<br> a fé e o compromisso dos idosos na missão de levar esperança.</p>
-                    </div>
-                </div>
+        </div>
+    </div>
 
-                <div class="item">
-                    <div class="image-event">
-                        <a href="#">
-                            <img src="Imagens/eventos/missões.jpg" alt="Evento 3" class="img-event" />
+
+    <section class="doacao">
+
+        <div class="doacao-container">
+
+            <div class="box-doacao">
+                <div class="content">
+                    <h3 class="text-doacao"> &mdash;&mdash; Faça a sua Doação &mdash;&mdash;</h3>
+                    <h1> Doar. Alcançar.<br> Transformar</h1>
+                    <p>Juntos, podemos ir mais longe. Contribua e faça parte do que Deus está fazendo.</p>
+                </div>
+                <div class="container-icons">
+                    <div class="box-icons">
+                        <img src="Imagens/Inicio e logo/Itau.png" alt="" class="img-icon">
+                        <p class="text-icon"> Itaú Unibanco <br>
+                            Ag: 9682 | Cc: 08700-3 </p>
+
+                    </div>
+
+                    <div class="box-icons">
+                        <img src="Imagens/Inicio e logo/caixa.png" alt="" class="img-icon">
+                        <p class="text-icon"> Caixa Econômica <br>
+                            Ag: 9682 | Cc: 08700-3 </p>
+
+                    </div>
+
+                    <div class="box-icons">
+                        <a href="https://wa.me/5591983179137?text=Ol%C3%A1%2C%20gostaria%20de%20enviar%20meu%20comprovante%20de%20doa%C3%A7%C3%A3o%20
+                    ">
+                            <img src="Imagens/Inicio e logo/WhatsApp.png" alt="" class="img-icon">
+                            <p class="text-icon"> <strong>Envie seu comprovante</strong> <br>
+                                Para o WhatsApp </p>
                         </a>
                     </div>
-                    <div class="event-text">
-                        <h2>Evento 3 - Imperdível!</h2>
-                    </div>
+
                 </div>
             </div>
 
-            <div class="arrow">
-                <button id="prev" aria-label="Voltar">
-                    <img src="Imagens/Inicio e logo/Design sem nome.png" alt="Seta para esquerda" />
-                </button>
-                <button id="next" aria-label="Avançar">
-                    <img src="Imagens/Inicio e logo/arrow.png" alt="Seta para direita" />
-                </button>
+            <div class="pix-container">
+                <img src="Imagens/Inicio e logo/chave pix.jpeg" alt="" class="img-pix">
+                <p class="text-pix"> &mdash;&mdash; Nossas Chaves Pix &mdash;&mdash; </p>
+
+                <h3 class="titulo-pix">Igreja Evangelica Assembleia de Deus em Marituba <br>
+                    chave pix: 04.717.054/0001-23</h3>
+
+                <p class="text-pix"> OU </p>
+
+
+                <h3 class="titulo-pix">Envie seu comprovante para <br> (91) 98317-9137 </h3>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="box-footer">
+        <div class="container-footer">
+            <img src="Imagens/Inicio e logo/9.png" alt="" class="img-footer">
+
+            <div class="text-footer">
+                <h2 class="titulo-footer"> Endereço</h2>
+                <p class="paragrafo-footer"> 137, R. da Assembléia 1 de Maio, <br> 15, Marituba - PA, 67105-290 </p>
+                <h2 class="titulo-footer"> Contatos</h2>
+                <p class="titulo-footer"> (91) 98317-9137 </p>
+            </div>
+
+            <div>
+                <h2 class="titulo-footer"> Mídias digitais </h2>
+                <div class="continer-icons">
+
+                    <a href="https://www.youtube.com/@admaritubaeareametropolita6582"> <i
+                            class="fa-brands fa-youtube"></i></a>
+
+                    <a href="https://www.facebook.com/admtc2020"><i class="fa-brands fa-facebook"></i></a>
+
+                    <a href="https://www.instagram.com/administeriomarituba/"> <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="conclusão">
+
+            <h3>Copyright © 2026 – Assembleia de Deus Ministerio Marituba | Todos os Direitos Reservados. </h3>
+
+            <div class="box-conclusão">
+                <h3>Desenvolvido por: </h3>
+
+                <a href=""><img src="Imagens/Inicio e logo/logo desenvolvedora.jpg" alt=""></a>
             </div>
 
 
         </div>
-    </div>
+    </footer>
+
+
+
+
+
+
 
 </body>
 

@@ -1,4 +1,44 @@
-  // Função que mostra o vídeo quando o botão é clicado
+// Abre/fecha o menu hambúrguer
+const menubtn = document.querySelector(".menu-btn")
+const navbar = document.querySelector(".menu")
+
+menubtn.addEventListener('click', () => {
+    navbar.classList.toggle('active')
+menubtn.classList.toggle('active')
+})
+
+// Abre/fecha submenu principal (SOBRE, MISSÕES)
+const dropdownlinks = document.querySelectorAll('.dropdown > a');
+
+dropdownlinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const submenu = this.nextElementSibling;
+        submenu.classList.toggle('active');
+    });
+});
+
+// Abre/fecha submenu interno (GERACIONAIS, ESPECÍFICAS)
+// ✅ CORREÇÃO: seleciona o <a> dentro do .has-submenu, não o li
+const hasSubmenuLinks = document.querySelectorAll('.has-submenu > a');
+
+hasSubmenuLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        const submenuRight = this.nextElementSibling; // pega o <ul> irmão do <a>
+
+        if (submenuRight && submenuRight.classList.contains('submenu-right')) {
+            e.preventDefault();
+            submenuRight.classList.toggle('active');
+        }
+    });
+});
+
+
+//
+
+
+
+// Função que mostra o vídeo quando o botão é clicado
 
 function abrirVideo() {
     const modal = document.getElementById('modalVideo');
@@ -50,13 +90,19 @@ document.getElementById('modalVideo').addEventListener('click', (evento) => {
     { label: 'Mulheres', color: '#d4537e' },
     { label: 'Crianças', color: '#ef9f27' },
     { label: 'Eventos', color: '#c0c0c0' },
-    { label: 'Idosos',   color: '#888780' },
+    { label: 'Idosos',  color: '#888780' },
     
 
   ];
  
   let current = 0;
  
+
+
+
+
+
+
   // Quantos cards visíveis conforme largura
   function getVisible() {
     if (window.innerWidth <= 480) return 1;
@@ -113,6 +159,7 @@ document.getElementById('modalVideo').addEventListener('click', (evento) => {
     const dots   = dotsEl.querySelectorAll('.dot');
     const thumbs = thumbsEl.querySelectorAll('.thumb');
  
+    
     dots.forEach((d, i) => d.classList.toggle('active', i === current));
     thumbs.forEach((t, i) => t.classList.toggle('active', i === current));
  

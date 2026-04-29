@@ -1,0 +1,137 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:  'Cinzel', serif;
+}
+
+
+
+
+body{
+        min-height: 100vh;
+    background: #058ab3;
+    background: linear-gradient(180deg, #023b54 0%, #023b54 100%);
+}
+.comeco{
+    margin-top: 2%; 
+}
+
+.leaders-titulo{
+    display: flex;
+    margin: 10% 10% 8% 10%;
+    align-items: center;
+    justify-content:center ;
+    font-size: 80px;
+      letter-spacing: 15%;
+      font-weight: 400;
+        background: linear-gradient(90deg, #fdfbef, #9adac1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.leaders-box{
+    display: flex;
+justify-content:  start;
+margin: 5% auto 5% auto ;
+margin-left: 15%;
+}
+
+.box-images img{
+    width: 400px;
+    height: 600px;
+    object-fit: cover;
+}
+
+.box-text{
+margin-left: 2%;
+}
+
+
+.titulo{
+ font-size: 40px;
+margin-bottom: 4%;
+font-weight: 400;
+color: beige;
+
+}
+.paragrafo{
+font-size: 17px;
+color: beige;
+padding-right: 10% ;
+font-weight: 300;
+  word-spacing: 5px;
+}
+
+/* Parte do conselho ministerial */ 
+
+
+.titulo-conselho{
+      font-size: 40px;
+margin-left: 30px;
+margin-top: 30px;
+    background: linear-gradient(90deg, #fdfbef, #9adac1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+.nomes{
+    display: flex;
+align-items: center;
+justify-content: center;
+padding: 2% 7% 2% 7%;
+gap: 30px;
+
+}
+
+.nomes-texto  {
+      list-style-type: none;
+        word-spacing: 1px;
+ letter-spacing: 1px; 
+     font-size: 15px ;
+    color: #fdfbef;   
+    padding: 5%;
+}
+
+.nomes-texto:hover{
+     box-shadow: 0 10px 20px rgb(2, 3, 37);
+ transform: translateY(-5px) scale(1);
+    /* aumenta o tamanho do card */
+    transition: all 0.4s ease;
+    cursor: pointer; transform: translateY(-5px) scale(1);
+    /* aumenta o tamanho do card */
+    transition: all 0.4s ease;
+    cursor: pointer;
+color: #023b54 ;
+background-color: #fdfbef ;
+border-radius: 10px;
+}
+.nomes-texto:not(:hover) {
+    transition: transform 0.4s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+.nomes-texto h2{
+    font-size: 30px;
+}
+
+.nomes-texto h3{
+    font-weight: 600;
+}
+.nomes-texto h4{
+    font-weight: 400;
+
+}
+
+.nomes-2{
+       display: flex;
+align-items: center;
+justify-content: start;
+padding: 2% 7% 2% 1%;
+
+}

@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-     font-family: 'Cinzel', serif;
+     font-family: 'Montserrat', serif;
 }
 :root {
     --primary-color: #ffffff;
@@ -21,14 +21,14 @@ html {
     color:#E1CDA4;
     text-align:center ;
     font-weight: 600;
-background: url(imagens/man-reading-newspaper.jpg);
+background: url(imagens/man-reading-newspaper.png);
   background-position: center center;
     background-repeat: no-repeat;
       background-size: cover;
 height: 400px;
 width: 100%;
 border-radius: 10px;
-font-size: 50px;
+font-size: 70px;
 padding-top: 10%;
 background-color: #00000077 ;
  letter-spacing: 10px; 
@@ -36,44 +36,77 @@ background-color: #00000077 ;
 }
 
 
-.container-conteudo{
-   display: flex;
-    gap: 30px;
-    margin-top: 5%;
-
+.lives{
+  
+    color: #08122A;
+    padding-bottom: 1%;
 }
-
 hr{
-    border: none;
-    height: 1px;
-    background-color: #000000;
-    margin-top: 10% ;
-    margin: 10% 0 10px 0 ;
-}
-h2{
-    color: #3C371B;
-    font-weight: 700;
-    margin-left: 5%;
-    font-size: 30px;
-    margin-top: 3%;
-}
-iframe{
-    border-radius: 12px;
-margin-left: 5%;
-margin-top: 2%;
-margin-bottom: 1%;
-
+    margin-top: 5%;
+    font-weight: 800;
+    color: var(--background-color);
 }
 
-.card-list .card-item .card-link{
-    display: block;
+.lives h2{
+    margin: 2%;
+    font-size:40px ;
+    font-weight: 300;
 }
-
-.card-wapper{
+.carousel-container{
+    position: relative;
     display: flex;
-    align-items: center;
- justify-content: space-around;
- gap: 5%;
 
+}
+.carousel{
+     display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  gap: 15px;
+  padding: 10px;
+  margin-top: 20px;
+    gap: 60px;
+background: #163C63;
+background: linear-gradient(0deg, rgba(22, 60, 99, 1) 7%, rgba(255, 255, 255, 1) 100%);
+padding: 3%;
+
+}
+
+.carousel iframe {
+   width: 600px;
+  height: 300px;
+  border-radius: 10px;
+  border: none;
+  flex-shrink: 0;
+
+}
+
+/* Botões */ 
+
+.btn{
+    background: rgba(0,0,0,0.7);
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 40%;
+  position: absolute;
+  z-index: 1;
+  width: 50px;
+  height: 60px;
+margin-top: 10%;
+}
+
+.btn:hover{
+background-color: #08122A;
+    transition: all 0.5s ease;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
 }
 

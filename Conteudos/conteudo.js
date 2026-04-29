@@ -1,21 +1,23 @@
-const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  direction: 'vertical',
-  loop: true,
+const containers = document.querySelectorAll('.carousel-container');
 
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
+containers.forEach(container => {
 
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+  const carousel = container.querySelector('.carousel');
+  const nextBtn = container.querySelector('.next');
+  const prevBtn = container.querySelector('.prev');
 
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
+  nextBtn.addEventListener('click', () => {
+    carousel.scrollBy({
+      left: 615,
+      behavior: 'smooth'
+    });
+  });
+
+  prevBtn.addEventListener('click', () => {
+    carousel.scrollBy({
+      left: -615,
+      behavior: 'smooth'
+    });
+  });
+
 });

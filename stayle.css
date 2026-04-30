@@ -1313,6 +1313,14 @@ margin-top: 0;
 font-size: 3.5rem;
 }
 
+.container-eventos{
+gap: 0;
+}
+
+.foto-evento {
+width: 130% ;
+}
+
 
 
 }

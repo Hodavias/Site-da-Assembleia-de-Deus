@@ -106,8 +106,8 @@ document.getElementById('modalVideo').addEventListener('click', (evento) => {
   // Quantos cards visíveis conforme largura
   function getVisible() {
     if (window.innerWidth <= 480) return 1;
-    if (window.innerWidth <= 768) return 2;
-    return 3;
+    if (window.innerWidth <= 768) return 1;
+    return 1;
   }
  
   function maxIndex() {

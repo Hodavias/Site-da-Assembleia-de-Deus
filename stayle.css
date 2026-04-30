@@ -729,6 +729,10 @@ body {
 
 }
 
+.texto-celular{
+    display: none;
+}
+
 .acompanhe-texto {
     font-weight: 500;
     font-size: 15px;
@@ -1266,7 +1270,11 @@ top: 5rem;
 
 .button-logo-container a{
 font-size: 2rem;
-margin-top: 60%;
+        margin-top: 31rem;
+        padding: 0;
+        font-size: 1.5rem;
+        padding: 0 1rem;
+        z-index: 1000;
 }
 
 .image-logo img{
@@ -1313,14 +1321,53 @@ margin-top: 0;
 font-size: 3.5rem;
 }
 
+/* Responsividade da parte do mantenha-se informado */ 
+
 .container-eventos{
-gap: 0;
+  display: flex;
+  justify-content: flex-start; /* joga tudo pra esquerda */
+  gap: 10px; /* espaço entre imagens */
 }
+
+.eventos{
+gap: 0;
+width: 100%;
+align-items: center;
+margin: 1.5rem auto;
+}
+
+
 
 .foto-evento {
 width: 130% ;
+padding: 0 1rem;
+margin: 0 auto; 
+  justify-content: flex-start; 
+  text-align: center;/* joga tudo pra esquerda */
 }
 
+.foto-evento button {
+    width: 80%;
+    height: 80%;
+}
+.foto-evento button:hover{
+background: none;
+}
+.foto-evento button::after{
+    display: none;
+}
+.foto-evento .texto-evento{
+    display: none;
 
+}
+
+.texto-celular{
+    display: flex;
+    color: #000000;
+    text-align: center;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
+}
 
 }

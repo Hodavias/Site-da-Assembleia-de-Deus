@@ -1276,9 +1276,10 @@ top: 5rem;
 
 .button-logo-container a{
 font-size: 2rem;
-        margin-top: 31rem;
+        margin-top: 34rem;
         padding: 0;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+        text-align: center;
         padding: 0 1rem;
         z-index: 1000;
 }
@@ -1286,19 +1287,27 @@ font-size: 2rem;
 .image-logo img{
     position: absolute;
 height: 48%;
-top: 2rem;
+top: 3rem;
 width: 100%;
 border-radius: 1.5rem;
 }
+
+
+
+/* Parte do sobre a Igreja */ 
+
 
 .titulo-sobre{
     font-size: 3rem;
   text-align: left;
   margin: 3rem 0;
 }
+
+
 .sobre-a-igreja{
     width: 100%;
     margin-bottom: 20% ;
+    margin-top: 30%;
 }
 
 .texto-sobre-{
@@ -1447,5 +1456,59 @@ gap: 1rem;
 }
 
 
+
+/* Parte do foorter */ 
+
+
+.box-footer{
+    border-radius: 3rem;
+}
+
+.img-footer{
+    margin: 2rem 0;
+    width: 300px;
+    height: 150px;
+    
+}
+
+.container-footer{
+    display: flex;
+    flex-direction: column;
+padding: 1rem 0;
+margin-top: 1rem;
+}
+
+.text-footer .titulo-footer{
+    font-size: 3rem;
+}
+.text-footer .paragrafo-footer{
+font-weight: 500;
+}
+
+.meios h2{
+    font-size: 3rem;
+    margin: 2rem 0 ;
+}
+
+.continer-icons a{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+/* parte da conclusão do site */ 
+
+.conclusão{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem;
+}
+.conclusão h3 {
+    font-size: 1.5rem;
+}
+
+.box-conclusão img{
+width: 10.25rem;
+height: 3.875rem ;
+}
 
 }

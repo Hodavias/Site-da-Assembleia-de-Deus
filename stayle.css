@@ -1375,5 +1375,69 @@ background: none;
     height: 3rem;
 }
 
+/* Parte de colaboração das missões */ 
+
+
+
+.doacao-container{
+     flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+.content{
+    font-size: 2rem;
+    margin-top: 10%;
+    text-align: center;
+    align-items: center;
+gap: 1rem;
+}
+
+.content h1{
+    font-size: 3.5rem;
+    margin-top: 2rem;
+}
+
+.text-doacao{
+    display: flex;
+    justify-content: center; /* centraliza horizontal */
+    align-items: center;
+    text-align: center;
+
+}
+    .container-icons {
+        padding: 0 20px; /* antes tava 100px, muito grande */
+        gap: 20px;
+    }
+  .box-doacao {
+        align-items: center;
+        text-align: center;
+    }
+    .box-icons {
+        width: 100%;
+        max-width: 300px;
+    }
+
+
+
+
+/* parte do pix */ 
+.pix-container{
+    margin-top: 20%;
+}
+.img-pix {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto; /* centraliza */
+    display: block;
+}
+.text-pix {
+   font-size: 1.5rem;
+    margin: 20px 0; /* remove esse 23% */
+    text-align: center;
+}
+
+
 
 }

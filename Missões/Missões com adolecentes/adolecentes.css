@@ -474,4 +474,22 @@ height: 90%;
 }
 
 
+
+/* Parte do publico alvo */
+
+.text-alvo{
+    font-size: 0.7rem;
+}
+
+
+
+/* Parte dos coordenadores */
+
+.coordinators h1{
+    font-size: 1.5rem;
+}
+
+
+
+
 }

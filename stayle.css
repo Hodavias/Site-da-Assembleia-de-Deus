@@ -1281,7 +1281,7 @@ font-size: 2rem;
         font-size: 1.3rem;
         text-align: center;
         padding: 0 1rem;
-        z-index: 1000;
+        z-index: 900;
 }
 
 .image-logo img{

@@ -43,7 +43,7 @@ html {
     --secundary-color: #000000;
     --terciary-color: #0000FF;
     --background-color: #08122A;
-    --text-color: #d4cdcd;
+    --text-color: #9adbc1;
 
 }
 
@@ -61,8 +61,8 @@ background: url(imagens\ das\ missões/Adolescentes.jpeg);
 object-fit: cover;
 
 height: 400px;
-width: 99%;
-border-radius: 20px;
+width: 100%;
+border-bottom: 20px;
 font-size: 50px;
 padding-top: 10%;
  letter-spacing: 10px;
@@ -86,7 +86,7 @@ padding-top: 10%;
 .text-sobre-titulo{
  
     font-weight: 700;
-  color:brown;
+  color:var(--background-color);
   font-size: 45px;
   display: block;
   margin-top: 7%;
@@ -94,24 +94,24 @@ padding-top: 10%;
 }
 
 .sobre-adolescentes{
-    background-color: rgb(107, 29, 35);
+    background-color: rgb(154, 219, 193);
     opacity: 0.9;
     border-radius: 30px;
     padding: 20px 20px;
     margin-top: 25px;
-    color: #FFFFFF;
+    color: var(--background-color);
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .sobre-adolescentes:hover {
-    box-shadow: 0 10px 20px rgb(107, 29, 35);
+    box-shadow: 0 10px 20px var(--background-color);
     transform: translateY(-10px) scale(1.05);
     /* aumenta o tamanho do card */
     transition: all 0.5s ease;
-color: rgb(107, 29, 35) ;
-background-color: #BF9752;
-font-weight: 700;
+color: rgb(154, 219, 193) ;
+background-color: var(--background-color);
+font-weight: 500;
 }
 
 .sobre-adolescentes:not(:hover) {
@@ -139,12 +139,12 @@ font-weight: 700;
 }
 
 .pontos:hover{
- box-shadow: 0 10px 20px rgb(107, 29, 35);
+ box-shadow: 0 10px 20px var(--background-color);
     transform: translateY(-10px) scale(1.05);
     /* aumenta o tamanho do card */
     transition: all 0.5s ease;
-color: rgb(107, 29, 35) ;
-background-color: #BF9752;
+color: var(--background-color) ;
+background-color: var(--text-color);
 width: 500px;
 left: 10px;
 border-radius: 20px;
@@ -185,7 +185,7 @@ border-radius: 20px;
     padding: 20px;
 }
 .public-text{
-    background-color: rgba(107, 29, 36, 0.247);
+    background-color: var(--background-color);
     opacity: 0.9;
     border-radius: 30px;
     padding: 20px 20px;
@@ -195,7 +195,7 @@ border-radius: 20px;
 .titulo-text{
     font-weight: 600;
     font-size: 25px;
-    color: rgb(107, 29, 35);
+    color: var(--text-color);
     margin-bottom: 20px;
 }
 
@@ -205,7 +205,7 @@ border-radius: 20px;
       line-height: 1.8;       /* Espaçamento generoso entre linhas */
   letter-spacing: 1px;    /* Leve espaçamento entre letras */
   word-spacing: 3px;      /* Espaçamento maior entre palavras */
-  color: black;
+  color: var(--primary-color);
   font-weight: 600;
 }
 
@@ -220,7 +220,7 @@ border-radius: 20px;
 }
 
 .image-social:hover {
-    box-shadow: 0 10px 20px #BF9752;
+    box-shadow: 0 10px 20px var(--primary-color);
     transform: translateY(-10px) scale(1.05);
     /* aumenta o tamanho do card */
     transition: all 0.5s ease;
@@ -237,12 +237,14 @@ border-radius: 20px;
 
 .eventos-caixa{
   text-align: center;
-   background-color: rgb(107, 29, 35);
+   background-color: var(--background-color);
    opacity: 0.9;
     border-radius: 30px;
     padding: 20px 20px;
-    margin-top: 25px;
+    margin-top: 5rem;
 }
+
+
 
 .acompanhe{
     font-weight: 600;
@@ -250,6 +252,22 @@ border-radius: 20px;
     color: #FFFFFF;
 }
 
+.coordinators h1{
+    color: var(--primary-color);
+}
+
+.coordinators-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4.5rem;
+gap: 4rem;
+}
+
+
+.coordinators-1, .coordinators-2{
+    color: var(--text-color);
+}
 
 
 /* Parte do slider de eventos */ 
@@ -394,8 +412,14 @@ border-radius: 15px;
 
 
 
+
+
+
+
+
+
 @media (max-width: 750px){
-/*
+
     html,body{
         margin: 0;
     overflow-x: hidden;
@@ -407,6 +431,7 @@ border-radius: 15px;
 .text{
     font-size: 1.5rem;
 padding-top:50% ;
+border-radius: 0rem;
 }
 
 /* parte de apresentação */ 
@@ -415,6 +440,7 @@ padding-top:50% ;
     font-size: 1.5rem;
 margin: 3rem 0 2rem 1rem;
     text-align: start;
+    
 }
 
 .sobre-adolescentes{
@@ -476,9 +502,16 @@ height: 90%;
 
 .coordinators h1{
     font-size: 1.5rem;
+
 }
 
+.coordinators-container{
+    display: flex;
+    flex-direction: column;
+}
 
-
+.coordinators-1, .coordinators-2{
+    font-size: 0.8rem;
+}
 
 }

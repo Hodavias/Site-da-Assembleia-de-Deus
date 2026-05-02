@@ -14,7 +14,9 @@
     will-change: transform, opacity;
 }
 
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+  
 @keyframes fadeInUp {
     to {
         opacity: 1;
@@ -41,7 +43,7 @@ html {
     --secundary-color: #000000;
     --terciary-color: #0000FF;
     --background-color: #08122A;
-    --text-color: #d4cdcd;
+    --text-color: #9adbc1;
 
 }
 
@@ -52,20 +54,21 @@ body{
 
 
 .text{
-    color:#E1CDA4;
+    color:rgb(134, 8, 8);
     text-align:center ;
     font-weight: 600;
-background: url(imagens/6.png);
-  background-position: center center;
-    background-repeat: no-repeat;
-      background-size: cover;
-height: 400px;
+background: url(imagens/Crianças.jpeg);
+object-fit: cover;
+
+height: 500px;
 width: 100%;
-border-radius: 10px;
+border-bottom: 20px;
 font-size: 50px;
 padding-top: 10%;
-background-color: #b34700 ;
- letter-spacing: 10px; 
+ letter-spacing: 10px;
+   background-repeat: no-repeat;
+  background-position: center; /* Centraliza vertical e horizontalmente */
+  background-size: cover;  
 }
 
 
@@ -83,7 +86,7 @@ background-color: #b34700 ;
 .text-sobre-titulo{
  
     font-weight: 700;
-  color:#b34700; 
+  color:var(--background-color);
   font-size: 45px;
   display: block;
   margin-top: 7%;
@@ -91,24 +94,24 @@ background-color: #b34700 ;
 }
 
 .sobre-adolescentes{
-    background-color: #b34700;
+    background-color: rgb(154, 219, 193);
     opacity: 0.9;
     border-radius: 30px;
     padding: 20px 20px;
     margin-top: 25px;
-    color: #FFFFFF;
+    color: var(--background-color);
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .sobre-adolescentes:hover {
-    box-shadow: 0 10px 20px rgb(107, 29, 35);
+    box-shadow: 0 10px 20px var(--background-color);
     transform: translateY(-10px) scale(1.05);
     /* aumenta o tamanho do card */
     transition: all 0.5s ease;
-color: #b34700 ;
-background-color: #ffffff;
-font-weight: 700;
+color: rgb(154, 219, 193) ;
+background-color: var(--background-color);
+font-weight: 500;
 }
 
 .sobre-adolescentes:not(:hover) {
@@ -136,12 +139,12 @@ font-weight: 700;
 }
 
 .pontos:hover{
- box-shadow: 0 10px 20px rgb(107, 29, 35);
+ box-shadow: 0 10px 20px var(--background-color);
     transform: translateY(-10px) scale(1.05);
     /* aumenta o tamanho do card */
     transition: all 0.5s ease;
-color: #b34700;
-background-color: #ffffff;
+color: var(--background-color) ;
+background-color: var(--text-color);
 width: 500px;
 left: 10px;
 border-radius: 20px;
@@ -182,7 +185,7 @@ border-radius: 20px;
     padding: 20px;
 }
 .public-text{
-    background-color:#b3480036 ;
+    background-color: var(--background-color);
     opacity: 0.9;
     border-radius: 30px;
     padding: 20px 20px;
@@ -192,7 +195,7 @@ border-radius: 20px;
 .titulo-text{
     font-weight: 600;
     font-size: 25px;
-    color: #b34700;
+    color: var(--text-color);
     margin-bottom: 20px;
 }
 
@@ -202,7 +205,7 @@ border-radius: 20px;
       line-height: 1.8;       /* Espaçamento generoso entre linhas */
   letter-spacing: 1px;    /* Leve espaçamento entre letras */
   word-spacing: 3px;      /* Espaçamento maior entre palavras */
-  color: black;
+  color: var(--primary-color);
   font-weight: 600;
 }
 
@@ -217,7 +220,7 @@ border-radius: 20px;
 }
 
 .image-social:hover {
-    box-shadow: 0 10px 20px #BF9752;
+    box-shadow: 0 10px 20px var(--primary-color);
     transform: translateY(-10px) scale(1.05);
     /* aumenta o tamanho do card */
     transition: all 0.5s ease;
@@ -234,12 +237,14 @@ border-radius: 20px;
 
 .eventos-caixa{
   text-align: center;
-   background-color: #b34700;
+   background-color: var(--background-color);
    opacity: 0.9;
     border-radius: 30px;
     padding: 20px 20px;
-    margin-top: 25px;
+    margin-top: 5rem;
 }
+
+
 
 .acompanhe{
     font-weight: 600;
@@ -247,18 +252,22 @@ border-radius: 20px;
     color: #FFFFFF;
 }
 
-
-
+.coordinators h1{
+    color: var(--primary-color);
+}
 
 .coordinators-container{
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 40px;
-    margin-top: 40px;
+    margin-top: 4.5rem;
+gap: 4rem;
 }
 
 
-
+.coordinators-1, .coordinators-2{
+    color: var(--text-color);
+}
 
 
 /* Parte do slider de eventos */ 
@@ -401,3 +410,108 @@ border-radius: 15px;
     margin-right: 100px;
 }
 
+
+
+
+
+
+
+
+
+@media (max-width: 750px){
+
+    html,body{
+        margin: 0;
+    overflow-x: hidden;
+    }
+
+
+
+/* primeira parte */ 
+.text{
+    font-size: 1.5rem;
+padding-top:50% ;
+border-radius: 0rem;
+}
+
+/* parte de apresentação */ 
+
+.text-sobre-titulo{
+    font-size: 1.5rem;
+margin: 3rem 0 2rem 1rem;
+    text-align: start;
+    
+}
+
+.sobre-adolescentes{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Parte dos pontos principais e das fotos */ 
+.container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.pontos{
+    padding: 1rem 6rem;
+    text-align: start;
+    
+}
+
+
+.pontos ul li {
+    font-size: 0.8rem;
+}
+
+
+/* Parte das fotos */ 
+
+.list{
+  height: 300px;
+}
+
+.slider-container{
+    width: 90%;
+    height: 50%;
+}
+
+/* Parte do botão */ 
+.arrow{
+  top: 50%;
+}
+
+
+
+/* Parte do video */
+.video-box{
+    border-radius:2rem ;
+width: 100%;
+height: 90%;
+}
+
+/* Parte do publico alvo */
+
+.text-alvo{
+    font-size: 0.7rem;
+}
+
+/* Parte dos coordenadores */
+
+.coordinators h1{
+    font-size: 1.5rem;
+
+}
+
+.coordinators-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.coordinators-1, .coordinators-2{
+    font-size: 0.8rem;
+}
+
+}

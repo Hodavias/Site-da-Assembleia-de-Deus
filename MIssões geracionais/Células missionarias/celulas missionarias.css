@@ -1,0 +1,517 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cinzel', serif;
+    opacity: 0;
+    /* escondido inicialmente */
+    transform: translateY(20px);
+    /* deslocado para baixo */
+    animation: fadeInUp 0.6s ease-out forwards;
+    /* animação para pegar a posição final */
+    animation-delay: var(--delay, 0s);
+    /* atraso para criar sequência */
+    will-change: transform, opacity;
+}
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .entry {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+:root {
+    --primary-color: #ffffff;
+    --secundary-color: #000000;
+    --terciary-color: #0000FF;
+    --background-color: #08122A;
+    --text-color: #9adbc1;
+
+}
+
+body{
+    background-color:   var(--primary-color) ;
+}
+
+
+
+.text{
+    color:rgb(134, 8, 8);
+    text-align:center ;
+    font-weight: 600;
+background: url(imagens/homens.jpeg);
+object-fit: cover;
+
+height: 500px;
+width: 100%;
+border-bottom: 20px;
+font-size: 50px;
+padding-top: 10%;
+ letter-spacing: 10px;
+   background-repeat: no-repeat;
+  background-position: center; /* Centraliza vertical e horizontalmente */
+  background-size: cover;  
+}
+
+
+
+
+.sobre{
+    
+    border-radius: 20px;
+    padding: 15px;
+  
+    
+}
+
+
+.text-sobre-titulo{
+ 
+    font-weight: 700;
+  color:var(--background-color);
+  font-size: 45px;
+  display: block;
+  margin-top: 7%;
+  margin-left: 30px;
+}
+
+.sobre-adolescentes{
+    background-color: rgb(154, 219, 193);
+    opacity: 0.9;
+    border-radius: 30px;
+    padding: 20px 20px;
+    margin-top: 25px;
+    color: var(--background-color);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.sobre-adolescentes:hover {
+    box-shadow: 0 10px 20px var(--background-color);
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+color: rgb(154, 219, 193) ;
+background-color: var(--background-color);
+font-weight: 500;
+}
+
+.sobre-adolescentes:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+
+.container{
+  display: flex;
+  align-items: center; /* alinha verticalmente */
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.pontos{
+    margin-bottom: 15px;
+    margin-left: 9%;
+    font-size: 19px;
+    padding: 50px;
+    margin-top: 5%;
+}
+
+.pontos:hover{
+ box-shadow: 0 10px 20px var(--background-color);
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+color: var(--background-color) ;
+background-color: var(--text-color);
+width: 500px;
+left: 10px;
+border-radius: 20px;
+font-weight: 600;
+}
+li{
+    margin-bottom: 2rem;
+}
+
+.pontos:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+    width: 500px;
+border-radius: 20px;
+}
+
+/* Parte do video */
+.video-secsion{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.video-box{
+    border-radius: 50px;
+      width: 80%;
+    height: 60%;
+}
+
+/* Publico Alvo */
+
+.public{
+    margin-bottom: 30px;
+    padding: 20px;
+}
+.public-text{
+    background-color: var(--background-color);
+    opacity: 0.9;
+    border-radius: 30px;
+    padding: 20px 20px;
+    margin-top: 25px;
+}
+
+.titulo-text{
+    font-weight: 600;
+    font-size: 25px;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.text-alvo{
+    margin-bottom: 20px;
+    font-size: 17px;
+      line-height: 1.8;       /* Espaçamento generoso entre linhas */
+  letter-spacing: 1px;    /* Leve espaçamento entre letras */
+  word-spacing: 3px;      /* Espaçamento maior entre palavras */
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+
+.image-social {
+    width: 84px;
+    height: 84px;
+    margin: 20px 20px;
+    cursor: pointer;
+    border-radius: 47px;
+
+}
+
+.image-social:hover {
+    box-shadow: 0 10px 20px var(--primary-color);
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+
+}
+
+.image-social:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+.eventos-caixa{
+  text-align: center;
+   background-color: var(--background-color);
+   opacity: 0.9;
+    border-radius: 30px;
+    padding: 20px 20px;
+    margin-top: 5rem;
+}
+
+
+
+.acompanhe{
+    font-weight: 600;
+    font-size: 25px;
+    color: #FFFFFF;
+}
+
+.coordinators h1{
+    color: var(--primary-color);
+}
+
+.coordinators-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4.5rem;
+gap: 4rem;
+}
+
+
+.coordinators-1, .coordinators-2{
+    color: var(--text-color);
+}
+
+
+/* Parte do slider de eventos */ 
+
+
+.slider-container {
+    position: relative;
+    margin-top: 8%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  width: 45%;
+  height: 600px; /* ou o tamanho que você quiser */
+  overflow: hidden;
+
+}
+
+.list {
+    position: relative;
+    height: 720px;
+    overflow: hidden;
+
+}
+
+/* Todos os itens começam escondidos */
+.list .item {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Item ativo fica visível */
+.list .item.active {
+    display: flex;
+
+
+
+}
+
+
+.image-event img {
+    display: inline-block;
+    overflow: hidden;
+  object-position: center;
+  object-fit: cover;
+  margin-top: 20%;
+
+
+}
+
+.image-event:hover {
+
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+    cursor: pointer;
+
+}
+
+.img-event {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin-bottom: 10px;
+    opacity: 1;
+border-radius: 15px;
+
+}
+
+
+
+/* Botões de navegação */
+.arrow {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 10px;
+    pointer-events: none;
+    /* evita que a área vazia do container capture clique */
+}
+
+.arrow button {
+    pointer-events: auto;
+    /* permite clicar nos botões */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 10px;
+    background: none;
+}
+
+.arrow button:hover {
+    background-color: rgb(255, 255, 255);
+    transform: translateY(-10px) scale(1.05);
+    /* aumenta o tamanho do card */
+    transition: all 0.5s ease;
+   
+}
+
+.arrow button:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+.arrow button img {
+    width: 25px;
+    height: 25px;
+}
+
+/* Inverte a seta do botão voltar */
+.arrow button#prev img {
+    transform: scaleX(-1);
+
+}
+
+
+
+.button-menu.ativo {
+    right: 208px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--background-color);
+
+}
+
+.conteudo {
+    transition: 0.5s ease;
+}
+
+.conteudo.ativo {
+    margin-right: 100px;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 750px){
+
+    html,body{
+        margin: 0;
+    overflow-x: hidden;
+    }
+
+
+
+/* primeira parte */ 
+.text{
+    font-size: 1.5rem;
+padding-top:50% ;
+border-radius: 0rem;
+}
+
+/* parte de apresentação */ 
+
+.text-sobre-titulo{
+    font-size: 1.5rem;
+margin: 3rem 0 2rem 1rem;
+    text-align: start;
+    
+}
+
+.sobre-adolescentes{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Parte dos pontos principais e das fotos */ 
+.container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.pontos{
+    padding: 1rem 6rem;
+    text-align: start;
+    
+}
+
+
+.pontos ul li {
+    font-size: 0.8rem;
+}
+
+
+/* Parte das fotos */ 
+
+.list{
+  height: 300px;
+}
+
+.slider-container{
+    width: 90%;
+    height: 50%;
+}
+
+/* Parte do botão */ 
+.arrow{
+  top: 50%;
+}
+
+
+
+/* Parte do video */
+.video-box{
+    border-radius:2rem ;
+width: 100%;
+height: 90%;
+}
+
+/* Parte do publico alvo */
+
+.text-alvo{
+    font-size: 0.7rem;
+}
+
+/* Parte dos coordenadores */
+
+.coordinators h1{
+    font-size: 1.5rem;
+
+}
+
+.coordinators-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.coordinators-1, .coordinators-2{
+    font-size: 0.8rem;
+}
+
+}

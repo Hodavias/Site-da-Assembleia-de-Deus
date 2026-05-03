@@ -89,7 +89,7 @@ document.getElementById('modalVideo').addEventListener('click', (evento) => {
     { label: 'Homens',   color: '#378add' },
     { label: 'Mulheres', color: '#d4537e' },
     { label: 'Crianças', color: '#ef9f27' },
-    { label: 'Eventos', color: '#c0c0c0' },
+    { label: 'Missões N & I', color: '#c0c0c0' },
     { label: 'Idosos',  color: '#888780' },
     
 

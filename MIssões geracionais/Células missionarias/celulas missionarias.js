@@ -12,7 +12,7 @@ const updateActiveItem = () => {
     // Remove a classe que está ativa 
     items.forEach(item => item.classList.remove('active'));
     // Adiciona a classe ao item atual 
-    items[currentIndex].classList.add('active');
+    items[currentIndex].classList.add('active'); 
 };
 
 

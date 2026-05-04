@@ -64,6 +64,13 @@ font-weight: 300;
   word-spacing: 5px;
 }
 
+.paragrafo-assinatura{
+    font-size: 1.5rem;
+color: #fdfbef;
+font-weight: 600;
+}
+
+
 /* Parte do conselho ministerial */ 
 
 
@@ -133,5 +140,87 @@ border-radius: 10px;
 align-items: center;
 justify-content: start;
 padding: 2% 7% 2% 1%;
+
+}
+
+
+
+@media (max-width: 750px) {
+
+    
+   html,body{
+        margin: 0;
+    overflow-x: hidden;
+    }
+     
+ .leaders-titulo{
+    font-size: 3rem;
+    margin: 20% 10% 10% 10%;
+ }
+
+ .leaders-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5% auto 5% auto ;
+ }
+
+
+ .box-images{
+display: flex;
+align-items: center;    
+justify-content: center;
+flex-direction: column;
+ }
+
+ .box-images p {
+  align-self: start; /* centraliza o parágrafo dentro do contêiner */
+  padding: 1rem; /* espaço entre a imagem e o parágrafo */
+  margin: 0.5rem 0 2rem 0;
+  font-size: 1rem;
+  
+ }
+
+.box-images img{
+    width: 95%;
+     padding: 1rem 0.5rem; /* espaço entre borda e imagem */
+  border-radius: 4px; /* opcional, deixa mais suave */
+margin: 0 auto; /* centraliza horizontalmente */
+}
+
+/* Parte do texto e titulo */ 
+
+.titulo{
+font-size: 2rem;
+margin: 1rem 0.5rem 1.5rem 0.5rem;
+
+}
+
+.paragrafo{
+font-size: 1rem;
+background-color: #fdfbef; /* leve fundo para melhor leitura */
+padding: 2rem;
+border-radius: 4px;
+color: #023b54;
+font-weight: 600;
+}
+
+
+
+/* Parte da diretoria e conselho ministerial */ 
+
+.nomes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5% 7% 2% 7%;
+    gap: 30px;
+    
+}
+
+
+
 
 }

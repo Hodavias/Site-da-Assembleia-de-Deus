@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_downward" />
+
+    <link rel="stylesheet" href="mapa.css">
+    <script src="mapa.js" defer></script>
+    <title>Templos</title>
+</head>
+
+<body>
+
+    <header class="menu-mapa">
+        <div class="titulo-mapa">
+            <h1> Ache um templo mais próximo a você ! </h1>
+        </div>
+        <div class="container-pesquisa">
+
+            <search class="pesquisa">
+                <form action="/search">
+                    <input type="search" name="q" placeholder="Buscar templo ou Região...">
+                    <button type="submit">Buscar</button>
+                </form>
+            </search>
+
+        </div>
+
+        <div class="botão-mapa">
+            <button id="proximo"> Mais Proximo</button>
+        </div>
+
+        <div class="titulo-regiao">
+            <h2>Regiões</h2>
+            <button class="regiao-ativo">Ver mais regiões <svg xmlns="http://www.w3.org/2000/svg" height="15px"
+                    viewBox="0 -960 960 960" width="15px" fill="#e3e3e3">
+                    <path d="M440-800v487L216-537l-56 57 320 320 320-320-56-57-224 224v-487h-80Z" />
+                </svg> </button>
+        </div>
+
+        <div class="container-regiao">
+
+
+            <div class="regiao">
+
+                <div class="box-região">
+                    <h3>Marituba I</h3>
+                </div>
+
+                <div class="box-região">
+                    <h3>Marituba II</h3>
+                </div>
+
+                <div class="box-região">
+                    <h3>Marituba III</h3>
+                </div>
+
+                <div class="box-região">
+                    <h3>Marituba IV</h3>
+                </div>
+
+                <div class="box-região">
+                    <h3>Marituba V</h3>
+                </div>
+
+                <div class="box-região">
+                    <h3>Marituba VI</h3>
+                </div>
+
+            </div>
+            <br>
+            <br>
+            <div class="regiao">
+
+                <div class="box-região">
+                    <h3>Ananindeua I</h3>
+                </div>
+
+                <div class="box-região">
+                    <h3>Ananindeua II</h3>
+                </div>
+
+                <div class="box-região">
+                    <h3>Ananindeua III</h3>
+                </div>
+
+            </div>
+
+            <br>
+
+            <div class="regiao">
+
+                <div class="box-região">
+                    <h3>Região interior</h3>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+    </header>
+
+    <!--Parte do mapa da aba -->
+    <section class="mapa-container">
+        <div class="box-mapa">
+<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d22639.94485802893!2d-48.33079995615574!3d-1.3692635067589383!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spt-BR!2sbr!4v1778179766781!5m2!1spt-BR!2sbr" width="1000" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+        </div>
+
+        <div class="box-information">
+
+
+        </div>
+
+    </section>
+
+<h2 class="longitude">
+
+</h2>
+
+
+
+</body>
+
+</html>                              

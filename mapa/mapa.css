@@ -1,0 +1,232 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+      --primary-color: #ffffff;
+    --secundary-color: #000000;
+    --terciary-color: #0000FF;
+    --background-color: #08122A;
+    --text-color: #696969;
+}
+
+
+body{
+   
+    font-family: 'Arial', sans-serif;
+}
+
+.menu-mapa{
+    background-color: var(--background-color);
+}
+
+
+.titulo-mapa h1{
+    text-align: center;
+    color: var(--primary-color);
+padding-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+
+/* parte da caixa de pesquisa */ 
+
+.container-pesquisa{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.pesquisa form input[type="search"]{
+    width: 800px;
+    height: 40px;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 20px ;
+    outline: none;
+}
+
+.pesquisa form input::placeholder{
+    color: var(--text-color);
+    font-size: 1rem;
+padding: 1rem;
+
+}
+
+.pesquisa form button{
+    box-shadow: 0 10px 20px rgb(2, 3, 37);
+    background: linear-gradient(180deg, #023b54 0%, #9adac1 100%);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    height: 45px;
+    width: 100px;
+}
+
+
+
+.pesquisa form button:hover{
+    box-shadow: 0 10px 20px rgb(2, 3, 37);
+    background: linear-gradient(180deg, #023b54 0%, #9adac1 100%);
+        transform: translateY(-5px) scale(1.05);
+    color: var(--primary-color);
+    transition: 1.3s;
+      transition: all 0.5s ease;
+    cursor: pointer;
+}
+.pesquisa form button:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+
+.botão-mapa{
+    display: flex;
+    justify-content: center;
+
+}
+.botão-mapa button{
+    box-shadow: 0 10px 20px rgb(2, 3, 37);
+    background: linear-gradient(180deg, #023b54 0%, #9adac1 100%);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 20px;
+    padding: 0 1rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    height: 45px;
+    width: 150px;
+    font-weight: 500;
+    font-size: 1rem;
+}
+.botão-mapa button:hover{
+    box-shadow: 0 10px 20px rgb(2, 3, 37);
+    background: linear-gradient(180deg, #023b54 0%, #9adac1 100%);
+        transform: translateY(-5px) scale(1.05);
+    color: var(--primary-color);
+    transition: 1.3s;
+      transition: all 0.5s ease;
+    cursor: pointer;
+}
+.botão-mapa button:not(:hover) {
+
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+/* parte das regiões */
+
+.titulo-regiao{
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 400;   
+    display: flex;
+  align-items: center;
+    justify-content: center;
+gap: 2rem;
+margin: 2rem;
+}
+
+.titulo-regiao button{
+      box-shadow: 0 10px 20px rgb(2, 3, 37);
+    background: linear-gradient(180deg, #023b54 0%, #9adac1 100%);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 20px;
+    margin: 0.5rem;
+    cursor: pointer;
+    height: 45px;
+    width: 150px;
+    font-weight: 500;
+    font-size: 0.8rem;
+text-align: center;
+
+}
+
+
+.titulo-regiao button:hover{
+    box-shadow: 0 10px 20px rgb(2, 3, 37);
+    background: linear-gradient(180deg, #023b54 0%, #9adac1 100%);
+        transform: translateY(-5px) scale(1.05);
+    color: var(--primary-color);
+    transition: 1.3s;
+      transition: all 0.5s ease;
+    cursor: pointer;
+}
+.titulo-regiao button:not(:hover) {
+    transition: transform 0.5s ease-in;
+    /* mais lento ao voltar */
+    transition: 0.4s ease;
+    /* suavidade no hover */
+}
+
+.regiao{
+    color: var(--primary-color);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-região{
+    background-color: var(--text-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    margin: 0.5rem;
+        border-radius: 20px;
+        cursor: pointer;
+}
+.box-região:hover{
+    transform: translateY(5px) scale(1.05);
+    transition: 0.3s ease;
+}
+
+.box-região h3{
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.container-regiao{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 20px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0;
+    transform: translateY(-20px);
+    transition:
+        max-height 0.2s ease,
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        padding 0.25s ease;
+}
+
+.container-regiao.ativo{
+    max-height: 500px; /* aumenta se precisar */
+    opacity: 1;
+    padding: 1rem;
+    transform: translateY(0);
+}
+/* parte da responsividade */
+@media (max-width: 768px) {
+
+
+
+
+}

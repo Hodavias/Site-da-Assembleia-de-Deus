@@ -1,0 +1,276 @@
+:root {
+    --primary-color: #ffffff;
+    --secundary-color: #000000;
+    --terciary-color: #0000FF;
+    --background-color: #08122A;
+    --text-color: #696969;
+}
+ 
+.navegacao {
+  display: flex;
+  justify-content: space-around;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 20px;
+}
+ 
+.navegacao section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+ 
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 4px;
+  background-color: rgba(255, 255, 255, 0.466);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: all 1.0s cubic-bezier(.25, .1, .25, 1);
+  border-radius: 15px;
+  margin-top: 2.5rem;
+}
+ 
+.menu:hover {
+    box-shadow: 0 10px 20px rgb(2, 3, 37);
+    background: linear-gradient(180deg, #023b54 0%, #9adac1 100%);
+    transform: translateY(-10px) scale(1.05);
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+ 
+.link-menu {
+  color: var(--text);
+  display: flex;
+  padding: 15px 18px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  transition: background 0.3s;
+  white-space: nowrap;
+}
+ 
+.link-menu:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+ 
+/* DROPDOWN DESKTOP */
+.dropdown { position: relative; }
+ 
+.submenu,
+.submenu-right {
+  position: absolute;
+  background: #eee;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  min-width: 200px;
+  padding: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: 0.3s ease;
+  list-style: none;
+  border-radius: 10px;
+  z-index: 999;
+}
+ 
+.submenu { top: 100%; left: 0; }
+ 
+.submenu-right { top: 0; left: 100%; margin-left: 8px; }
+ 
+.has-submenu { position: relative; }
+ 
+.has-submenu > a {
+  display: block;
+  padding: 8px 10px;
+  text-decoration: none;
+  color: #023b54;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 6px;
+}
+ 
+.has-submenu > a:hover { background: #9adac0; }
+ 
+.submenu-right li { margin-bottom: 4px; }
+ 
+.submenu-right li a {
+  display: block;
+  padding: 6px 10px;
+  text-decoration: none;
+  color: var(--background-color);
+  font-size: 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+}
+ 
+.submenu-right li a:hover { background: #9adac0; }
+ 
+.dropdown:hover > .submenu,
+.has-submenu:hover > .submenu-right {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+ 
+/* HAMBÚRGUER */
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 10px;
+}
+ 
+.bar-1, .bar-2, .bar-3{
+  width: 40px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 4px;
+  transition: 0.3s;
+}
+ 
+.menu-btn.active .bar-1:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+.menu-btn.active .bar-2:nth-child(2) { opacity: 0; }
+.menu-btn.active .bar-3:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+ 
+/* MOBILE */
+@media (max-width: 750px) {
+    html, body {
+        margin: 0;
+        overflow-x: hidden;
+    }
+ 
+    .menu-btn { display: flex; }
+ 
+    .navegacao {
+        position: absolute;
+        top: 5rem;
+    }
+ 
+    .navegacao section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+ 
+    .menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(180deg, #023b54 0%, #9adac1 100%);
+        flex-direction: column;
+        padding: 10px 20px 20px;
+        gap: 0;
+        border-radius: 10px;
+    }
+ 
+    .menu.active { display: flex; }
+ 
+    .link-menu {
+        padding: 12px 10px;
+        font-size: 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+ 
+    .submenu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background: rgba(0, 0, 0, 0.15);
+        padding: 0;
+        min-width: unset;
+        width: 100%;
+        border-radius: 0;
+        display: none;
+    }
+ 
+    .submenu.active { display: block; }
+ 
+    .submenu-right {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background: rgba(0, 0, 0, 0.1);
+        padding: 0 0 0 15px;
+        min-width: unset;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        display: none;
+    }
+ 
+    .submenu-right.active { display: block; }
+ 
+    .dropdown:hover > .submenu,
+    .has-submenu:hover > .submenu-right {
+        display: none;
+    }
+ 
+    .submenu.active,
+    .submenu-right.active { display: block !important; }
+ 
+    .has-submenu { margin: 0; }
+ 
+    .has-submenu > a {
+        color: #fff;
+        padding: 10px 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 13px;
+    }
+ 
+    .submenu-right li a {
+        color: #fff;
+        padding: 8px 10px;
+        font-size: 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+}
+ 
+/* ================================================================
+   CORREÇÃO: algumas páginas (ex: pastas de Missões) têm uma regra
+   "*{ transform:...; animation:...; will-change:... }" no CSS
+   próprio delas, que aplica transform/animação em TODOS os
+   elementos, incluindo html e body. Isso quebra o "position: sticky"
+   do menu e bagunça a ordem de sobreposição (z-index).
+   Este bloco neutraliza esse efeito, sem precisar editar o CSS de
+   cada pasta individualmente.
+   ================================================================ */
+html, body {
+    transform: none !important;
+    will-change: auto !important;
+}
+ 
+.navegacao,
+.navegacao * {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    will-change: auto !important;
+}
+ 
+.navegacao {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 99999 !important;
+}
+ 
+/* Espaço reservado no topo da página para o menu fixo não tapar o conteúdo.
+   O menu-loader.js ajusta esse valor com precisão via JavaScript;
+   isto aqui é só um valor de segurança caso o JS demore/falhe. */
+body {
+    padding-top: 110px;
+}

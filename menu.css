@@ -34,7 +34,6 @@
   border-radius: 15px;
   margin-top: 2.5rem;
 }
- 
 .menu:hover {
     box-shadow: 0 10px 20px rgb(2, 3, 37);
     background: linear-gradient(180deg, #023b54 0%, #9adac1 100%);
@@ -42,7 +41,6 @@
     transition: all 0.5s ease;
     cursor: pointer;
 }
- 
 .link-menu {
   color: var(--text);
   display: flex;
@@ -53,15 +51,12 @@
   border-radius: 8px;
   transition: background 0.3s;
   white-space: nowrap;
-}
- 
+} 
 .link-menu:hover {
   background: rgba(255, 255, 255, 0.15);
 }
- 
 /* DROPDOWN DESKTOP */
 .dropdown { position: relative; }
- 
 .submenu,
 .submenu-right {
   position: absolute;

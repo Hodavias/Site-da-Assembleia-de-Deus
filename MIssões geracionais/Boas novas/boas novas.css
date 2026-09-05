@@ -3,19 +3,9 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Cinzel', serif;
-    opacity: 0;
-    /* escondido inicialmente */
-    transform: translateY(20px);
-    /* deslocado para baixo */
-    animation: fadeInUp 0.6s ease-out forwards;
-    /* animação para pegar a posição final */
-    animation-delay: var(--delay, 0s);
-    /* atraso para criar sequência */
-    will-change: transform, opacity;
 }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   
 @keyframes fadeInUp {
     to {
